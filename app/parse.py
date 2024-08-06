@@ -6,6 +6,7 @@ from dataclasses import dataclass, asdict
 from enum import Enum
 from functools import wraps
 from typing import Callable, Any
+import os
 
 import pandas as pd
 from openpyxl import load_workbook
@@ -19,15 +20,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 BASE_URL = "https://mate.academy/"
-JSON_RESULT_FILE = "courses_data.json"
-EXCEL_RESULT_FILE = "courses_data.xlsx"
+script_dir = os.path.dirname(os.path.abspath(__file__))
+JSON_RESULT_FILE = os.path.join(script_dir, "courses_data.json")
+EXCEL_RESULT_FILE = os.path.join(script_dir, "courses_data.xlsx")
 
 
 class HTTPResponseError(Exception):
     def __init__(self, url: str, status_code: int) -> None:
-        super().__init__(
-            f"Error getting page: {url}, status code: {status_code}"
-        )
+        super().__init__(f"Error getting page: {url}, status code: {status_code}")
 
 
 class CourseType(Enum):
@@ -82,9 +82,7 @@ def log_time(func: Callable) -> Callable:
         start_time = time.time()
         result = func(*args, **kwargs)
         elapsed_time = time.time() - start_time
-        logging.info(
-            f"Time taken by {func.__name__}: {elapsed_time:.2f} seconds"
-        )
+        logging.info(f"Time taken by {func.__name__}: {elapsed_time:.2f} seconds")
         return result
 
     return wrapper
