@@ -1,21 +1,21 @@
-2024-08-07 00:38:10,276 - INFO - Time taken by get_page_content_with_selenium: 23.34 seconds
-2024-08-07 00:38:36,425 - INFO - Time taken by get_page_content_with_selenium: 26.06 seconds
-2024-08-07 00:39:02,223 - INFO - Time taken by get_page_content_with_selenium: 25.68 seconds
-2024-08-07 00:39:28,157 - INFO - Time taken by get_page_content_with_selenium: 25.78 seconds
-2024-08-07 00:39:54,151 - INFO - Time taken by get_page_content_with_selenium: 25.87 seconds
-2024-08-07 00:40:20,004 - INFO - Time taken by get_page_content_with_selenium: 25.72 seconds
-2024-08-07 00:40:46,503 - INFO - Time taken by get_page_content_with_selenium: 26.37 seconds
-2024-08-07 00:41:12,087 - INFO - Time taken by get_page_content_with_selenium: 25.42 seconds
-2024-08-07 00:41:37,984 - INFO - Time taken by get_page_content_with_selenium: 25.79 seconds
-2024-08-07 00:42:03,985 - INFO - Time taken by get_page_content_with_selenium: 25.87 seconds
-2024-08-07 00:42:30,194 - INFO - Time taken by get_page_content_with_selenium: 26.09 seconds
-2024-08-07 00:42:55,976 - INFO - Time taken by get_page_content_with_selenium: 25.64 seconds
-2024-08-07 00:43:21,728 - INFO - Time taken by get_page_content_with_selenium: 25.58 seconds
-2024-08-07 00:43:48,102 - INFO - Time taken by get_page_content_with_selenium: 26.25 seconds
-2024-08-07 00:44:16,234 - INFO - Time taken by get_page_content_with_selenium: 28.01 seconds
-2024-08-07 00:44:42,102 - INFO - Time taken by get_page_content_with_selenium: 25.74 seconds
-2024-08-07 00:45:08,010 - INFO - Time taken by get_page_content_with_selenium: 25.79 seconds
-2024-08-07 00:45:08,199 - INFO - Write to file: courses_data.json
-2024-08-07 00:45:08,415 - INFO - Write to Excel file: courses_data.xlsx
-2024-08-07 00:45:08,415 - INFO - Courses data saved to courses_data.json and courses_data.xlsx
-2024-08-07 00:45:08,416 - INFO - Time taken by main: 441.48 seconds
+2024-08-07 00:55:58,857 - INFO - Time taken by get_page_content_with_selenium: 19.56 seconds
+2024-08-07 00:56:24,367 - INFO - Time taken by get_page_content_with_selenium: 25.42 seconds
+2024-08-07 00:56:50,036 - INFO - Time taken by get_page_content_with_selenium: 25.54 seconds
+2024-08-07 00:57:15,670 - INFO - Time taken by get_page_content_with_selenium: 25.46 seconds
+2024-08-07 00:57:42,334 - INFO - Time taken by get_page_content_with_selenium: 26.53 seconds
+2024-08-07 00:58:08,004 - INFO - Time taken by get_page_content_with_selenium: 25.54 seconds
+2024-08-07 00:58:33,462 - INFO - Time taken by get_page_content_with_selenium: 25.32 seconds
+2024-08-07 00:58:58,825 - INFO - Time taken by get_page_content_with_selenium: 25.19 seconds
+2024-08-07 00:59:24,653 - INFO - Time taken by get_page_content_with_selenium: 25.71 seconds
+2024-08-07 00:59:50,232 - INFO - Time taken by get_page_content_with_selenium: 25.45 seconds
+2024-08-07 01:00:15,705 - INFO - Time taken by get_page_content_with_selenium: 25.34 seconds
+2024-08-07 01:00:41,333 - INFO - Time taken by get_page_content_with_selenium: 25.52 seconds
+2024-08-07 01:01:06,562 - INFO - Time taken by get_page_content_with_selenium: 25.06 seconds
+2024-08-07 01:01:31,972 - INFO - Time taken by get_page_content_with_selenium: 25.28 seconds
+2024-08-07 01:01:58,188 - INFO - Time taken by get_page_content_with_selenium: 26.09 seconds
+2024-08-07 01:02:23,558 - INFO - Time taken by get_page_content_with_selenium: 25.24 seconds
+2024-08-07 01:02:48,455 - INFO - Time taken by get_page_content_with_selenium: 24.77 seconds
+2024-08-07 01:02:48,627 - INFO - Write to file: D:\projects\mate-academy-test-assignment\app\courses_data.json
+2024-08-07 01:02:48,853 - INFO - Write to Excel file: D:\projects\mate-academy-test-assignment\app\courses_data.xlsx
+2024-08-07 01:02:48,853 - INFO - Courses data saved to D:\projects\mate-academy-test-assignment\app\courses_data.json and D:\projects\mate-academy-test-assignment\app\courses_data.xlsx
+2024-08-07 01:02:48,854 - INFO - Time taken by main: 429.56 seconds
