@@ -41,7 +41,7 @@ _courses_
 
 ## Solution for Task 1:
 1.1:
-```
+```python
 SELECT 
     DATE_TRUNC('week', l.created_at) AS week,
     c.type AS course_type,
@@ -57,7 +57,7 @@ ORDER BY
 ```
 
 1.2:
-```
+```python
 SELECT 
     d.country_name,
     COUNT(*) AS won_flex_leads_count
@@ -80,7 +80,7 @@ ORDER BY
 ```
 
 1.3:
-```
+```python
 SELECT 
     u.email,
     l.id AS lead_id,
