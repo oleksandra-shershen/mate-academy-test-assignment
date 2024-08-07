@@ -40,63 +40,47 @@ _courses_
 | 27  | devops         | FLEX      | 1           | 1    |
 
 ## Solution for Task 1:
-1.1:
+**1.1. The number of created leads per week grouped by course type:**
 ```python
 SELECT 
-    DATE_TRUNC('week', l.created_at) AS week,
-    c.type AS course_type,
-    COUNT(*) AS leads_count
-FROM 
-    leads l
-JOIN 
-    courses c ON l.course_id = c.id
-GROUP BY 
-    week, course_type
-ORDER BY 
-    week, course_type;
+    DATE_TRUNC('week', leads.created_at) AS week,
+    courses.type,
+    COUNT(leads.id) AS number_of_leads
+FROM leads
+JOIN courses ON leads.course_id = courses.id
+GROUP BY week, courses.type
+ORDER BY week, courses.type;
 ```
 
-1.2:
+**1.2. The number of WON flex leads per country created from 01.01.2024:**
 ```python
 SELECT 
-    d.country_name,
-    COUNT(*) AS won_flex_leads_count
-FROM 
-    leads l
-JOIN 
-    users u ON l.user_id = u.id
-JOIN 
-    domains d ON u.domain_id = d.id
-JOIN 
-    courses c ON l.course_id = c.id
-WHERE 
-    l.status = 'WON' 
-    AND c.type = 'FLEX' 
-    AND l.created_at >= '2024-01-01'
-GROUP BY 
-    d.country_name
-ORDER BY 
-    d.country_name;
+    domains.country_name,
+    COUNT(leads.id) AS number_of_won_flex_leads
+FROM leads
+JOIN courses ON leads.course_id = courses.id
+JOIN users ON leads.user_id = users.id
+JOIN domains ON users.domain_id = domains.id
+WHERE leads.status = 'WON'
+  AND courses.type = 'FLEX'
+  AND leads.created_at >= '2024-01-01'
+GROUP BY domains.country_name
+ORDER BY number_of_won_flex_leads DESC;
 ```
 
-1.3:
+**1.3. User email, lead id and lost reason for users who have lost flex leads from 01.07.2024:**
 ```python
 SELECT 
-    u.email,
-    l.id AS lead_id,
-    l.lost_reason
-FROM 
-    leads l
-JOIN 
-    users u ON l.user_id = u.id
-JOIN 
-    courses c ON l.course_id = c.id
-WHERE 
-    l.status = 'LOST' 
-    AND c.type = 'FLEX' 
-    AND l.created_at >= '2024-07-01'
-ORDER BY 
-    u.email, l.id;
+    users.email,
+    leads.id AS lead_id,
+    leads.lost_reason
+FROM leads
+JOIN users ON leads.user_id = users.id
+JOIN courses ON leads.course_id = courses.id
+WHERE leads.status = 'LOST'
+  AND courses.type = 'FLEX'
+  AND leads.created_at >= '2024-07-01'
+ORDER BY leads.id;
 ```
 
 ## Task 2: Web scraping 
