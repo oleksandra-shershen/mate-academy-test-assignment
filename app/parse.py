@@ -240,7 +240,10 @@ def write_to_excel(courses_data: list[dict], file_name: str) -> None:
         {
             "Name": course["name"],
             "Link": course["link"],
-            "Type": course["type"]
+            "Type": course["type"],
+            "Duration": course["details"]["duration"],
+            "Number of Modules": course["details"]["num_modules"],
+            "Number of Topics": course["details"]["num_topics"]
         }
         for course in courses_data
     ]
