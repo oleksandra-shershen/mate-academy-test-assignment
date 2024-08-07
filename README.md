@@ -15,7 +15,7 @@ Table schemas:
 _users_
 | id  | email               | first_name | last_name | phone          | domain_id | language_id |
 |-----|---------------------|------------|-----------|--------------- |-----------|-------------|
-| 35  | jsmith@example.com] | John       | Smith     | (123) 456-7890 | 1         | 1           |
+| 35  | jsmith@example.com  | John       | Smith     | (123) 456-7890 | 1         | 1           |
 | 47  | ldoe@example.com    | Laura      | Doe       | (987) 654-3210 | 1         | 1           |
 | 51  | mbrown@example.com  | Michael    | Brown     | (555) 123-4567 | 4         | 5           |
 
