@@ -19,3 +19,33 @@
 2024-08-07 01:02:48,853 - INFO - Write to Excel file: D:\projects\mate-academy-test-assignment\app\courses_data.xlsx
 2024-08-07 01:02:48,853 - INFO - Courses data saved to D:\projects\mate-academy-test-assignment\app\courses_data.json and D:\projects\mate-academy-test-assignment\app\courses_data.xlsx
 2024-08-07 01:02:48,854 - INFO - Time taken by main: 429.56 seconds
+2024-08-07 15:49:17,619 - INFO - Time taken by get_page_content_with_selenium: 24.18 seconds
+2024-08-07 15:49:44,142 - INFO - Time taken by get_page_content_with_selenium: 26.44 seconds
+2024-08-07 15:50:10,299 - INFO - Time taken by get_page_content_with_selenium: 26.03 seconds
+2024-08-07 15:50:36,175 - INFO - Time taken by get_page_content_with_selenium: 25.72 seconds
+2024-08-07 15:51:02,243 - INFO - Time taken by get_page_content_with_selenium: 25.95 seconds
+2024-08-07 15:51:28,272 - INFO - Time taken by get_page_content_with_selenium: 25.91 seconds
+2024-08-07 15:51:54,246 - INFO - Time taken by get_page_content_with_selenium: 25.84 seconds
+2024-08-07 15:52:19,894 - INFO - Time taken by get_page_content_with_selenium: 25.47 seconds
+2024-08-07 15:52:46,061 - INFO - Time taken by get_page_content_with_selenium: 26.05 seconds
+2024-08-07 16:17:02,545 - INFO - Time taken by get_page_content_with_selenium: 24.00 seconds
+2024-08-07 16:17:28,755 - INFO - Time taken by get_page_content_with_selenium: 26.12 seconds
+2024-08-07 16:17:54,920 - INFO - Time taken by get_page_content_with_selenium: 26.05 seconds
+2024-08-07 16:18:20,845 - INFO - Time taken by get_page_content_with_selenium: 25.77 seconds
+2024-08-07 16:18:46,851 - INFO - Time taken by get_page_content_with_selenium: 25.89 seconds
+2024-08-07 16:19:13,305 - INFO - Time taken by get_page_content_with_selenium: 26.31 seconds
+2024-08-07 16:19:39,130 - INFO - Time taken by get_page_content_with_selenium: 25.69 seconds
+2024-08-07 16:20:04,905 - INFO - Time taken by get_page_content_with_selenium: 25.60 seconds
+2024-08-07 16:20:30,939 - INFO - Time taken by get_page_content_with_selenium: 25.92 seconds
+2024-08-07 16:20:56,743 - INFO - Time taken by get_page_content_with_selenium: 25.66 seconds
+2024-08-07 16:21:22,491 - INFO - Time taken by get_page_content_with_selenium: 25.62 seconds
+2024-08-07 16:21:48,240 - INFO - Time taken by get_page_content_with_selenium: 25.62 seconds
+2024-08-07 16:22:14,252 - INFO - Time taken by get_page_content_with_selenium: 25.85 seconds
+2024-08-07 16:22:40,088 - INFO - Time taken by get_page_content_with_selenium: 25.71 seconds
+2024-08-07 16:23:06,133 - INFO - Time taken by get_page_content_with_selenium: 25.88 seconds
+2024-08-07 16:23:32,696 - INFO - Time taken by get_page_content_with_selenium: 26.43 seconds
+2024-08-07 16:23:58,466 - INFO - Time taken by get_page_content_with_selenium: 25.65 seconds
+2024-08-07 16:23:58,646 - INFO - Write to file: D:\projects\mate-academy-test-assignment\app\courses_data.json
+2024-08-07 16:23:58,893 - INFO - Write to Excel file: D:\projects\mate-academy-test-assignment\app\courses_data.xlsx
+2024-08-07 16:23:58,893 - INFO - Courses data saved to D:\projects\mate-academy-test-assignment\app\courses_data.json and D:\projects\mate-academy-test-assignment\app\courses_data.xlsx
+2024-08-07 16:23:58,894 - INFO - Time taken by main: 440.35 seconds
