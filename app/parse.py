@@ -78,11 +78,11 @@ def configure_logging() -> None:
 
 def log_time(func: Callable) -> Callable:
     @wraps(func)
-    def wrapper(*args: Any, **kwargs: Any) -> Any:
+    def wrapper(url: str, *args: Any, **kwargs: Any) -> Any:
         start_time = time.time()
-        result = func(*args, **kwargs)
+        result = func(url, *args, **kwargs)
         elapsed_time = time.time() - start_time
-        logging.info(f"Time taken by {func.__name__}: {elapsed_time:.2f} seconds")
+        logging.info(f"Time taken by {func.__name__} for {url}: {elapsed_time:.2f} seconds")
         return result
 
     return wrapper
