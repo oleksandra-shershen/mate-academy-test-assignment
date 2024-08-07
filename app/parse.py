@@ -20,9 +20,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 BASE_URL = "https://mate.academy/"
-script_dir = os.path.dirname(os.path.abspath(__file__))
-JSON_RESULT_FILE = os.path.join(script_dir, "courses_data.json")
-EXCEL_RESULT_FILE = os.path.join(script_dir, "courses_data.xlsx")
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+JSON_RESULT_FILE = os.path.join(APP_DIR, "courses_data.json")
+EXCEL_RESULT_FILE = os.path.join(APP_DIR, "courses_data.xlsx")
 
 
 class HTTPResponseError(Exception):
@@ -89,7 +89,7 @@ def log_time(func: Callable) -> Callable:
 
 
 @log_time
-def get_page_content_with_selenium(url: str, timeout: int = 10) -> str:
+def get_page_content(url: str, timeout: int = 10) -> str:
     driver = webdriver.Chrome()
     driver.get(url)
 
@@ -112,7 +112,7 @@ def get_page_content_with_selenium(url: str, timeout: int = 10) -> str:
 
 
 def get_course_detail(url: str) -> CourseDetailDTO:
-    content = get_page_content_with_selenium(url)
+    content = get_page_content(url)
     soup = BeautifulSoup(content, "html.parser")
 
     heading = soup.find(
@@ -183,7 +183,7 @@ def get_course_detail(url: str) -> CourseDetailDTO:
 
 
 def get_all_courses(url: str) -> list[CourseLinkDTO]:
-    content = get_page_content_with_selenium(url)
+    content = get_page_content(url)
     soup = BeautifulSoup(content, "html.parser")
     courses = []
 
