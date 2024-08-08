@@ -3,39 +3,51 @@ import logging
 import re
 import time
 from dataclasses import dataclass, asdict
+from enum import Enum
 from functools import wraps
 from typing import Callable, Any
-import os
 
 import pandas as pd
+import requests
 from openpyxl import load_workbook
 from openpyxl.styles import Alignment
+from openpyxl.worksheet.hyperlink import Hyperlink
 
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 BASE_URL = "https://mate.academy/"
-APP_DIR = os.path.dirname(os.path.abspath(__file__))
-JSON_RESULT_FILE = os.path.join(APP_DIR, "courses_data.json")
-EXCEL_RESULT_FILE = os.path.join(APP_DIR, "courses_data.xlsx")
+JSON_RESULT_FILE = "courses_data.json"
+EXCEL_RESULT_FILE = "courses_data.xlsx"
 
 
 class HTTPResponseError(Exception):
     def __init__(self, url: str, status_code: int) -> None:
-        super().__init__(f"Error getting page: {url}, status code: {status_code}")
+        super().__init__(
+            f"Error getting page: {url}, status code: {status_code}"
+        )
 
 
 @dataclass(frozen=True)
 class CourseLinkDTO:
     name: str
     link: str
+    description: str  # Added description field
+
+
+@dataclass(frozen=True)
+class CourseModuleDTO:
+    title: str
     description: str
+    topics: list[str]
+
+
+@dataclass(frozen=True)
+class CourseDetailDTO:
     duration: str
-    level: str
+    num_modules: int
+    num_topics: int
+    modules: list[CourseModuleDTO]
 
 
 def configure_logging() -> None:
@@ -45,7 +57,7 @@ def configure_logging() -> None:
     file_handler = logging.FileHandler("app.log")
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(
-        logging.Formatter("%(asctime)s %(levelname)s - %(message)s")
+        logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
     )
     logger.addHandler(file_handler)
 
@@ -59,11 +71,13 @@ def configure_logging() -> None:
 
 def log_time(func: Callable) -> Callable:
     @wraps(func)
-    def wrapper(url: str, *args: Any, **kwargs: Any) -> Any:
+    def wrapper(*args: Any, **kwargs: Any) -> Any:
         start_time = time.time()
-        result = func(url, *args, **kwargs)
+        result = func(*args, **kwargs)
         elapsed_time = time.time() - start_time
-        logging.info(f"Time taken by {func.__name__} for {url}: {elapsed_time:.2f} seconds")
+        logging.info(
+            f"Time taken by {func.__name__}: {elapsed_time:.2f} seconds"
+        )
         return result
 
     return wrapper
@@ -71,25 +85,74 @@ def log_time(func: Callable) -> Callable:
 
 @log_time
 def get_page_content(url: str, timeout: int = 10) -> str:
-    driver = webdriver.Chrome()
-    driver.get(url)
-
     try:
-        while True:
-            show_more_button = WebDriverWait(driver, timeout).until(
-                EC.presence_of_element_located((
-                    By.CSS_SELECTOR,
-                    ".CourseModulesBlock_showMoreButton__N0f0_"
-                ))
-            )
-            driver.execute_script("arguments[0].click();", show_more_button)
-            time.sleep(2)
-    except:
-        pass
+        response = requests.get(url, timeout=timeout)
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.RequestException as error:
+        logging.error(f"Error fetching {url}: {error}")
+        raise HTTPResponseError(url, response.status_code) from error
 
-    page_content = driver.page_source
-    driver.quit()
-    return page_content
+
+def get_course_detail(url: str) -> CourseDetailDTO:
+    content = get_page_content(url)
+    soup = BeautifulSoup(content, "html.parser")
+
+    heading = soup.find(
+        "div",
+        class_=re.compile(r"CourseModulesHeading_headingGrid.*")
+    )
+    duration = heading.find(
+        "div", class_=re.compile(r"CourseModulesHeading_courseDuration.*")
+    ).text.strip()
+    num_modules = int(
+        heading.find(
+            "div",
+            class_=re.compile(r"CourseModulesHeading_modulesNumber.*")
+        )
+        .text.strip()
+        .split()[0]
+    )
+    num_topics = int(
+        heading.find(
+            "div",
+            class_=re.compile(r"CourseModulesHeading_topicsNumber.*")
+        )
+        .text.strip()
+        .split()[0]
+    )
+
+    modules = []
+    module_elements = soup.find_all(
+        "div", class_=re.compile(r"CourseModuleItem_grid.*")
+    )
+
+    for module in module_elements:
+        title = module.find("h4").text.strip()
+        description = module.find(
+            "p", class_=re.compile(r"CourseModuleItem_description.*")
+        ).text.strip()
+        topics = [
+            topic.text.strip()
+            for topic in module.find(
+                "div",
+                class_=re.compile(r"CourseModuleItem_topicsListContainer.*")
+            ).find_all("p", class_=re.compile(r"typography_landingTextMain.*"))
+        ]
+        modules.append(
+            CourseModuleDTO(
+                title=title,
+                description=description,
+                topics=topics
+            )
+        )
+
+    return CourseDetailDTO(
+        duration=duration,
+        num_modules=num_modules,
+        num_topics=num_topics,
+        modules=modules,
+    )
 
 
 def get_all_courses(url: str) -> list[CourseLinkDTO]:
@@ -97,30 +160,26 @@ def get_all_courses(url: str) -> list[CourseLinkDTO]:
     soup = BeautifulSoup(content, "html.parser")
     courses = []
 
-    card_elements = soup.find_all(
-        "div", class_="ProfessionCard_cardWrapper__JQBNJ"
+    profession_cards = soup.find_all(
+        "div", class_=re.compile(r"ProfessionCard_cardWrapper__JQBNJ")
     )
 
-    for card in card_elements:
-        course_name_tag = card.find("a", class_="typography_landingH3__vTjok")
-        course_link_tag = card.find("a", class_="Button_brandSecondary__DXhVs")
-        course_description_tag = card.find("p", class_="typography_landingTextMain__Rc8BD mb-32")
-        course_info_tag = card.find("p",
-                                    class_="typography_landingTextMain__Rc8BD ProfessionCard_subtitle__K1Yp6 mb-24")
-
-        if course_name_tag and course_link_tag and course_description_tag and course_info_tag:
-            course_name = course_name_tag.find("h3").text.strip()
-            course_link = urljoin(BASE_URL, course_link_tag.get("href"))
-            course_description = course_description_tag.text.strip()
-            course_info = course_info_tag.text.strip().split("•")
-            course_duration = course_info[0].strip()
-            course_level = course_info[1].strip() if len(course_info) > 1 else "N/A"
+    for card in profession_cards:
+        name_tag = card.find(
+            "a", class_="typography_landingH3__vTjok ProfessionCard_title__Zq5ZY mb-12"
+        )
+        description_tag = card.find(
+            "p", class_="typography_landingTextMain__Rc8BD mb-32"
+        )
+        if name_tag and description_tag:
+            name = name_tag.find("h3").text.strip()
+            link = urljoin(BASE_URL, name_tag.get("href"))
+            description = description_tag.text.strip()
             courses.append(
-                CourseLinkDTO(name=course_name, link=course_link, description=course_description,
-                              duration=course_duration, level=course_level)
+                CourseLinkDTO(name=name, link=link, description=description)
             )
         else:
-            logging.warning(f"Missing course name, link, description, or info in card: {card}")
+            logging.warning(f"Missing course name or description in card: {card}")
 
     return courses
 
@@ -149,9 +208,7 @@ def write_to_excel(courses_data: list[dict], file_name: str) -> None:
         {
             "Name": course["name"],
             "Link": course["link"],
-            "Description": course["description"],
-            "Duration": course["duration"],
-            "Level": course["level"]
+            "Description": course["description"]
         }
         for course in courses_data
     ]
@@ -160,16 +217,28 @@ def write_to_excel(courses_data: list[dict], file_name: str) -> None:
     with pd.ExcelWriter(file_name, engine="openpyxl") as writer:
         df_summary.to_excel(writer, sheet_name="Summary", index=False)
 
+        for course in courses_data:
+            course_name = sanitize_sheet_name(course["name"])
+            course_details = course.get("details", {})
+            df_modules = pd.DataFrame(course_details.get("modules", []))
+
+            for col in df_modules.columns:
+                df_modules[col] = df_modules[col].apply(
+                    lambda x: add_line_breaks(x, 10)
+                    if isinstance(x, str) else x
+                )
+
+            df_modules.to_excel(writer, sheet_name=course_name, index=False)
+
     workbook = load_workbook(file_name)
 
     summary_sheet = workbook["Summary"]
     for row in summary_sheet.iter_rows(
-            min_row=2, max_row=len(courses_data) + 1, min_col=1, max_col=1
+            min_row=2, max_row=len(courses_data) + 1, min_col=2, max_col=2
     ):
         for cell in row:
-            course_name = cell.value
-            sanitized_name = sanitize_sheet_name(course_name)
-            cell.hyperlink = f"#'{sanitized_name}'!A1"
+            link = cell.value
+            cell.hyperlink = Hyperlink(ref=cell.coordinate, target=link)
             cell.style = "Hyperlink"
             cell.alignment = Alignment(
                 wrap_text=True, horizontal="center", vertical="center"
@@ -205,7 +274,14 @@ def main(base_url: str) -> None:
     configure_logging()
     try:
         courses = get_all_courses(base_url)
-        courses_data = [asdict(course) for course in courses]
+        courses_data = []
+        for course in courses:
+            course_dict = {
+                "name": course.name,
+                "link": course.link,
+                "description": course.description,
+            }
+            courses_data.append(course_dict)
     except HTTPResponseError as e:
         logging.error(f"Failed to fetch courses: {e}")
     else:
