@@ -3,7 +3,6 @@ import logging
 import re
 import time
 from dataclasses import dataclass, asdict
-from enum import Enum
 from functools import wraps
 from typing import Callable, Any
 
@@ -32,22 +31,13 @@ class HTTPResponseError(Exception):
 class CourseLinkDTO:
     name: str
     link: str
-    description: str  # Added description field
-
-
-@dataclass(frozen=True)
-class CourseModuleDTO:
-    title: str
     description: str
-    topics: list[str]
 
 
 @dataclass(frozen=True)
 class CourseDetailDTO:
-    duration: str
     num_modules: int
     num_topics: int
-    modules: list[CourseModuleDTO]
 
 
 def configure_logging() -> None:
@@ -98,60 +88,21 @@ def get_course_detail(url: str) -> CourseDetailDTO:
     content = get_page_content(url)
     soup = BeautifulSoup(content, "html.parser")
 
-    heading = soup.find(
-        "div",
-        class_=re.compile(r"CourseModulesHeading_headingGrid.*")
-    )
-    duration = heading.find(
-        "div", class_=re.compile(r"CourseModulesHeading_courseDuration.*")
-    ).text.strip()
+    heading = soup.find("div", class_=re.compile(r"CourseModulesHeading_headingGrid__.*"))
+
+    # Extract duration, number of modules, and number of topics
     num_modules = int(
-        heading.find(
-            "div",
-            class_=re.compile(r"CourseModulesHeading_modulesNumber.*")
-        )
-        .text.strip()
-        .split()[0]
+        heading.find("div", class_=re.compile(r"CourseModulesHeading_modulesNumber__.*")).find(
+            "p").text.strip().split()[0]
     )
     num_topics = int(
-        heading.find(
-            "div",
-            class_=re.compile(r"CourseModulesHeading_topicsNumber.*")
-        )
-        .text.strip()
-        .split()[0]
+        heading.find("div", class_=re.compile(r"CourseModulesHeading_topicsNumber__.*")).find("p").text.strip().split()[
+            0]
     )
-
-    modules = []
-    module_elements = soup.find_all(
-        "div", class_=re.compile(r"CourseModuleItem_grid.*")
-    )
-
-    for module in module_elements:
-        title = module.find("h4").text.strip()
-        description = module.find(
-            "p", class_=re.compile(r"CourseModuleItem_description.*")
-        ).text.strip()
-        topics = [
-            topic.text.strip()
-            for topic in module.find(
-                "div",
-                class_=re.compile(r"CourseModuleItem_topicsListContainer.*")
-            ).find_all("p", class_=re.compile(r"typography_landingTextMain.*"))
-        ]
-        modules.append(
-            CourseModuleDTO(
-                title=title,
-                description=description,
-                topics=topics
-            )
-        )
 
     return CourseDetailDTO(
-        duration=duration,
         num_modules=num_modules,
         num_topics=num_topics,
-        modules=modules,
     )
 
 
@@ -208,7 +159,9 @@ def write_to_excel(courses_data: list[dict], file_name: str) -> None:
         {
             "Name": course["name"],
             "Link": course["link"],
-            "Description": course["description"]
+            "Description": course["description"],
+            "Modules": course["details"]["num_modules"],
+            "Topics": course["details"]["num_topics"],
         }
         for course in courses_data
     ]
@@ -216,19 +169,6 @@ def write_to_excel(courses_data: list[dict], file_name: str) -> None:
 
     with pd.ExcelWriter(file_name, engine="openpyxl") as writer:
         df_summary.to_excel(writer, sheet_name="Summary", index=False)
-
-        for course in courses_data:
-            course_name = sanitize_sheet_name(course["name"])
-            course_details = course.get("details", {})
-            df_modules = pd.DataFrame(course_details.get("modules", []))
-
-            for col in df_modules.columns:
-                df_modules[col] = df_modules[col].apply(
-                    lambda x: add_line_breaks(x, 10)
-                    if isinstance(x, str) else x
-                )
-
-            df_modules.to_excel(writer, sheet_name=course_name, index=False)
 
     workbook = load_workbook(file_name)
 
@@ -281,6 +221,8 @@ def main(base_url: str) -> None:
                 "link": course.link,
                 "description": course.description,
             }
+            details = get_course_detail(course.link)
+            course_dict["details"] = asdict(details)
             courses_data.append(course_dict)
     except HTTPResponseError as e:
         logging.error(f"Failed to fetch courses: {e}")
