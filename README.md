@@ -99,3 +99,10 @@ Additionally, extract the following details for each course:
 * Number of Modules
 * Number of Topics
 * Course Duration
+
+## Solution for Task 2:
+The web scraper is implemented in the file app/parse.py. This script extracts the list of courses from the landing page of the mate.academy website. All collected data is saved in an Excel file for easy access and analysis.
+![image](https://github.com/user-attachments/assets/ed9c1089-ad9d-40e8-a810-cf069fd85cc8)
+
+![image](https://github.com/user-attachments/assets/1c467765-c6cc-4c87-a131-d9653992777b)
+
