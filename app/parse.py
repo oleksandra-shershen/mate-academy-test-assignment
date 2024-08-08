@@ -3,7 +3,6 @@ import logging
 import re
 import time
 from dataclasses import dataclass, asdict
-from enum import Enum
 from functools import wraps
 from typing import Callable, Any
 import os
@@ -30,31 +29,13 @@ class HTTPResponseError(Exception):
         super().__init__(f"Error getting page: {url}, status code: {status_code}")
 
 
-class CourseType(Enum):
-    FULL_TIME = "full-time"
-    PART_TIME = "part-time"
-
-
 @dataclass(frozen=True)
 class CourseLinkDTO:
     name: str
     link: str
-    course_type: CourseType
-
-
-@dataclass(frozen=True)
-class CourseModuleDTO:
-    title: str
     description: str
-    topics: list[str]
-
-
-@dataclass(frozen=True)
-class CourseDetailDTO:
     duration: str
-    num_modules: int
-    num_topics: int
-    modules: list[CourseModuleDTO]
+    level: str
 
 
 def configure_logging() -> None:
@@ -111,108 +92,36 @@ def get_page_content(url: str, timeout: int = 10) -> str:
     return page_content
 
 
-def get_course_detail(url: str) -> CourseDetailDTO:
-    content = get_page_content(url)
-    soup = BeautifulSoup(content, "html.parser")
-
-    heading = soup.find(
-        "div",
-        class_=re.compile(r"CourseModulesHeading_headingGrid.*")
-    )
-    duration = heading.find(
-        "div", class_=re.compile(r"CourseModulesHeading_courseDuration.*")
-    ).text.strip()
-    num_modules = int(
-        heading.find(
-            "div",
-            class_=re.compile(r"CourseModulesHeading_modulesNumber.*")
-        )
-        .text.strip()
-        .split()[0]
-    )
-    num_topics = int(
-        heading.find(
-            "div",
-            class_=re.compile(r"CourseModulesHeading_topicsNumber.*")
-        )
-        .text.strip()
-        .split()[0]
-    )
-
-    modules = []
-    module_elements = soup.find_all(
-        "div", class_=re.compile(r"CourseModuleItem_grid.*")
-    )
-
-    for module in module_elements:
-        title = module.find("h4").text.strip()
-        description = module.find(
-            "p", class_=re.compile(r"CourseModuleItem_description.*")
-        ).text.strip()
-
-        topics_container = module.find(
-            "div",
-            class_=re.compile(r"CourseModuleItem_topicsListContainer.*")
-        )
-
-        if topics_container:
-            topics = [
-                topic.text.strip()
-                for topic in topics_container.find_all(
-                    "p",
-                    class_=re.compile(r"typography_landingTextMain.*")
-                )
-            ]
-        else:
-            topics = []
-
-        modules.append(
-            CourseModuleDTO(
-                title=title,
-                description=description,
-                topics=topics
-            )
-        )
-
-    return CourseDetailDTO(
-        duration=duration,
-        num_modules=num_modules,
-        num_topics=num_topics,
-        modules=modules,
-    )
-
-
 def get_all_courses(url: str) -> list[CourseLinkDTO]:
     content = get_page_content(url)
     soup = BeautifulSoup(content, "html.parser")
     courses = []
 
-    ul_elements = soup.find_all(
-        "ul", class_=re.compile(r"DropdownCoursesList_coursesList.*")
+    card_elements = soup.find_all(
+        "div", class_="ProfessionCard_cardWrapper__JQBNJ"
     )
 
-    for ul in ul_elements:
-        course_list_items = ul.find_all(
-            "li", class_=re.compile(r"DropdownCoursesList_coursesListItem.*")
-        )
-        for item in course_list_items:
-            course_name_tag = item.select_one(
-                "span.ButtonBody_buttonText__FMZEg"
+    for card in card_elements:
+        course_name_tag = card.find("a", class_="typography_landingH3__vTjok")
+        course_link_tag = card.find("a", class_="Button_brandSecondary__DXhVs")
+        course_description_tag = card.find("p", class_="typography_landingTextMain__Rc8BD mb-32")
+        course_info_tag = card.find("p",
+                                    class_="typography_landingTextMain__Rc8BD ProfessionCard_subtitle__K1Yp6 mb-24")
+
+        if course_name_tag and course_link_tag and course_description_tag and course_info_tag:
+            course_name = course_name_tag.find("h3").text.strip()
+            course_link = urljoin(BASE_URL, course_link_tag.get("href"))
+            course_description = course_description_tag.text.strip()
+            course_info = course_info_tag.text.strip().split("•")
+            course_duration = course_info[0].strip()
+            course_level = course_info[1].strip() if len(course_info) > 1 else "N/A"
+            courses.append(
+                CourseLinkDTO(name=course_name, link=course_link, description=course_description,
+                              duration=course_duration, level=course_level)
             )
-            course_link_tag = item.select_one("a")
-            if course_name_tag and course_link_tag:
-                course_name = course_name_tag.text
-                course_link = urljoin(BASE_URL, course_link_tag.get("href"))
-                course_type = (
-                    CourseType.PART_TIME
-                    if "parttime" in course_link
-                    else CourseType.FULL_TIME
-                )
-                courses.append(
-                    CourseLinkDTO(course_name, course_link, course_type)
-                )
-            else:
-                logging.warning(f"Missing course name or link in item: {item}")
+        else:
+            logging.warning(f"Missing course name, link, description, or info in card: {card}")
+
     return courses
 
 
@@ -240,10 +149,9 @@ def write_to_excel(courses_data: list[dict], file_name: str) -> None:
         {
             "Name": course["name"],
             "Link": course["link"],
-            "Type": course["type"],
-            "Duration": course["details"]["duration"],
-            "Number of Modules": course["details"]["num_modules"],
-            "Number of Topics": course["details"]["num_topics"]
+            "Description": course["description"],
+            "Duration": course["duration"],
+            "Level": course["level"]
         }
         for course in courses_data
     ]
@@ -251,19 +159,6 @@ def write_to_excel(courses_data: list[dict], file_name: str) -> None:
 
     with pd.ExcelWriter(file_name, engine="openpyxl") as writer:
         df_summary.to_excel(writer, sheet_name="Summary", index=False)
-
-        for course in courses_data:
-            course_name = sanitize_sheet_name(course["name"])
-            course_details = course["details"]
-            df_modules = pd.DataFrame(course_details["modules"])
-
-            for col in df_modules.columns:
-                df_modules[col] = df_modules[col].apply(
-                    lambda x: add_line_breaks(x, 10)
-                    if isinstance(x, str) else x
-                )
-
-            df_modules.to_excel(writer, sheet_name=course_name, index=False)
 
     workbook = load_workbook(file_name)
 
@@ -310,16 +205,7 @@ def main(base_url: str) -> None:
     configure_logging()
     try:
         courses = get_all_courses(base_url)
-        courses_data = []
-        for course in courses:
-            course_details = get_course_detail(course.link)
-            course_dict = {
-                "name": course.name,
-                "link": course.link,
-                "type": course.course_type.value,
-                "details": asdict(course_details),
-            }
-            courses_data.append(course_dict)
+        courses_data = [asdict(course) for course in courses]
     except HTTPResponseError as e:
         logging.error(f"Failed to fetch courses: {e}")
     else:
