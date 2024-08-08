@@ -38,6 +38,8 @@ class CourseLinkDTO:
 class CourseDetailDTO:
     num_modules: int
     num_topics: int
+    full_time_duration: str
+    flex_duration: str
 
 
 def configure_logging() -> None:
@@ -90,7 +92,6 @@ def get_course_detail(url: str) -> CourseDetailDTO:
 
     heading = soup.find("div", class_=re.compile(r"CourseModulesHeading_headingGrid__.*"))
 
-    # Extract duration, number of modules, and number of topics
     num_modules = int(
         heading.find("div", class_=re.compile(r"CourseModulesHeading_modulesNumber__.*")).find(
             "p").text.strip().split()[0]
@@ -100,9 +101,24 @@ def get_course_detail(url: str) -> CourseDetailDTO:
             0]
     )
 
+    # Extract course duration from the comparison table
+    comparison_table = soup.find("section", id="compare-formats")
+    rows = comparison_table.find_all("div", class_="ComparisonTable_row__P2dAA")
+
+    full_time_duration = ""
+    flex_duration = ""
+    for row in rows:
+        if "Тривалість" in row.get_text():
+            cells = row.find_all("div", class_="ComparisonTable_cell__8DNfm")
+            full_time_duration = cells[1].get_text(strip=True)
+            flex_duration = cells[2].get_text(strip=True)
+            break
+
     return CourseDetailDTO(
         num_modules=num_modules,
         num_topics=num_topics,
+        full_time_duration=full_time_duration,
+        flex_duration=flex_duration
     )
 
 
@@ -162,6 +178,8 @@ def write_to_excel(courses_data: list[dict], file_name: str) -> None:
             "Description": course["description"],
             "Modules": course["details"]["num_modules"],
             "Topics": course["details"]["num_topics"],
+            "Full-Time Duration": course["details"]["full_time_duration"],
+            "Flex Duration": course["details"]["flex_duration"],
         }
         for course in courses_data
     ]
