@@ -97,9 +97,76 @@
                         "Case Design Tips",
                         "Second Behance Case"
                     ]
+                },
+                {
+                    "title": "Creative Web",
+                    "description": "Цілковито зануримось в роботу з UI і створимо нестандартний концепт веб-сайту, який згодом оформимо у ще один проєкт для портфоліо. На тебе чекає багато практики та експериментів з композицією, типографією, кольорами й іншим візуальним контентом.",
+                    "topics": [
+                        "Design exploration",
+                        "Site structure and mood board",
+                        "Wireframing",
+                        "Concept creation",
+                        "Adapting design",
+                        "Third Behance case"
+                    ]
+                },
+                {
+                    "title": "Employment",
+                    "description": "Відшліфовуємо резюме, рекомендаційний лист та профілі в професійних соціальних мережах. Працюємо з базою вакансій. Проходимо тестові технічні та нетехнічні інтерв’ю. Вчимося комунікувати з рекрутерами. Проходимо справжнє інтерв’ю. Приймаємо оффер. Виходимо на роботу.",
+                    "topics": [
+                        "Introduction",
+                        "Preparing Your Resume",
+                        "Interview Preparation",
+                        "Preparing Your Cover Letter",
+                        "DOU and Google Profiles",
+                        "Creating Your LinkedIn Profile",
+                        "How to Communicate in the Right Way",
+                        "Creating Your Djinni Profile",
+                        "How to Find Vacancies",
+                        "How to Apply for a Job on Different Platforms",
+                        "How to Find Recruiters' Contacts",
+                        "Employment Daily Activities",
+                        "Work Details FAQ"
+                    ]
+                },
+                {
+                    "title": "HTML + CSS Basics",
+                    "description": "Поверстаємо? В цьому модулі ти ознайомишся з базовими конструкціями мови розмітки HTML та мовою стилів CSS.",
+                    "topics": [
+                        "HTML Basics",
+                        "CSS Basics",
+                        "Colors and Fonts",
+                        "Box Model Basics",
+                        "Semantic Basics",
+                        "Responsiveness Basics",
+                        "CSS Selectors",
+                        "Pseudo-Elements and Pseudo-Classes",
+                        "Specificity",
+                        "Links and URLs",
+                        "Images",
+                        "Media Queries",
+                        "Forms",
+                        "Position",
+                        "Extra Topics"
+                    ]
+                },
+                {
+                    "title": "Career Development",
+                    "description": "Цей модуль спрямований на розвиток навичок, необхідних для досягнення успіху в професійній сфері, а саме: стратегії кар'єрного зростання, важливі аспекти особистісного розвитку та інструменти для досягнення професійних цілей.",
+                    "topics": [
+                        "Mastering Your Probation Period",
+                        "PDP and Career Plans",
+                        "Salary Review Strategies",
+                        "Recruiter Outreach",
+                        "How to Find a New Job?"
+                    ]
                 }
             ]
-        }
+        },
+        "num_modules": 11,
+        "num_topics": 90,
+        "full_time_duration": "4 місяці",
+        "part_time_duration": "8 місяців"
     },
     {
         "name": "QA engineer",
@@ -209,9 +276,172 @@
                         "Position",
                         "Extra Topics"
                     ]
+                },
+                {
+                    "title": "JavaScript Basics Extended",
+                    "description": "Продовжимо знайомство з JavaScript? Час подивитися на рядки, числа та цикли з іншої сторони. Ох, а об'єкти чого тільки варті ... І на десерт — ще порція задач для додаткової практики!",
+                    "topics": [
+                        "Code Style",
+                        "Working With Numbers",
+                        "Loops in Details",
+                        "Working With Strings",
+                        "Functions Revisited",
+                        "Switch",
+                        "Type Conversion",
+                        "Logical Operators",
+                        "Object Basics",
+                        "Extended Extra"
+                    ]
+                },
+                {
+                    "title": "How the Web Works",
+                    "description": "Кожного дня ти так чи інакше взаємодієш із мережею Інтернет. Але чи замислювався ти над тим, як працює всесвітня павутина? У цьому модулі ми допоможемо тобі розібратися з тим, як взаємодіють та обмінюються даними наші пристрої в мережі та що таке Інтернет в цілому.",
+                    "topics": [
+                        "Introduction to the Web",
+                        "OSI Model",
+                        "HTTP",
+                        "API Interface",
+                        "Encryption",
+                        "Security in the Web"
+                    ]
+                },
+                {
+                    "title": "Testing Web Applications",
+                    "description": "Чому QA має знати, як працює Інтернет? Питання, яке хвилювало багатьох грецьких філософів (якби в їх часи був Інтернет). У цьому модулі ми дізнаємося про те, що приховано під шаром GUI браузера, як з цим має працювати QA та які інструменти можуть допомогти підвищити ефективність тестування.",
+                    "topics": [
+                        "Browser DevTools",
+                        "Web Theory and Postman Basics",
+                        "Postman Advanced"
+                    ]
+                },
+                {
+                    "title": "Mobile testing",
+                    "description": "Що будить більшість людей зранку і яку річ майже кожен з нас тримає в руках перед сном? На початку 2000-х відповідь була не такою очевидною, але в наші дні мобільні пристрої повсюди, і для кожного з них потрібні десятки додатків, які треба протестувати. Але як?",
+                    "topics": [
+                        "Mobile testing theory",
+                        "Guidelines",
+                        "Mobile testing activities",
+                        "Emulators and Tools"
+                    ]
+                },
+                {
+                    "title": "Working With Infrastructure",
+                    "description": "Що таке тестове середовище? Які існують середовища для тестування? Як налаштувати локальний сервер і як підключитися до локальної бази даних? Спробуємо розібратися.",
+                    "topics": [
+                        "Working Environments",
+                        "SQL",
+                        "Practice"
+                    ]
+                },
+                {
+                    "title": "QA Ethics",
+                    "description": "Ми майже готові почати працевлаштування, але які каверзні запитання про QA можуть бути на нашому шляху до омріяного оферу? Обговоримо деякі з них, а також поговоримо про те, як спілкуватися з товаришами по команді так, щоб вас не звільнили наступного дня.",
+                    "topics": [
+                        "Interview Questions",
+                        "QA Ethics"
+                    ]
+                },
+                {
+                    "title": "Employment",
+                    "description": "Відшліфовуємо резюме, рекомендаційний лист та профілі в професійних соціальних мережах. Працюємо з базою вакансій. Проходимо тестові технічні та нетехнічні інтерв’ю. Вчимося комунікувати з рекрутерами. Проходимо справжнє інтерв’ю. Приймаємо оффер. Виходимо на роботу.",
+                    "topics": [
+                        "Introduction",
+                        "Preparing Your Resume",
+                        "Interview Preparation",
+                        "Preparing Your Cover Letter",
+                        "DOU and Google Profiles",
+                        "Creating Your LinkedIn Profile",
+                        "How to Communicate in the Right Way",
+                        "Creating Your Djinni Profile",
+                        "How to Find Vacancies",
+                        "How to Apply for a Job on Different Platforms",
+                        "How to Find Recruiters' Contacts",
+                        "Employment Daily Activities",
+                        "Work Details FAQ"
+                    ]
+                },
+                {
+                    "title": "JavaScript Advanced",
+                    "description": "Тепер поглибимо наші знання та закріпимо базу на практиці. Навчимося працювати з GitHub та отримаємо зворотній зв'язок від менторів на написаний код. Навчимося робити інтерфейси не тільки гарними, але й функціональними! Зробимо перший запит на сервер та багато-багато іншого!",
+                    "topics": [
+                        "How to Solve Tasks on Github",
+                        "Object Advanced",
+                        "Methods",
+                        "Array Methods",
+                        "Callbacks",
+                        "Array Iteration Methods Implementation",
+                        "Array Iteration Methods Usage",
+                        "Array Iteration Methods Practice",
+                        "Closures",
+                        "JS Practice",
+                        "Prototype",
+                        "Constructors",
+                        "Classes",
+                        "Extra"
+                    ]
+                },
+                {
+                    "title": "JavaScript Testing",
+                    "description": "Тестування — це важливо! Але чим більше коду, тим більше треба перевіряти кожного разу. Автоматизація дозволить значно спростити цей процес.",
+                    "topics": [
+                        "Introduction to Javascript Automated Testing",
+                        "Unit Testing",
+                        "TDD Basics",
+                        "Mock Basics",
+                        "Advanced Mocks",
+                        "Cypress"
+                    ]
+                },
+                {
+                    "title": "Desktop Application Testing on macOS",
+                    "description": "Цей модуль охоплює особливості екосистеми macOS, інструменти для пошуку помилок і дебаггінгу, UI-тестування згідно з Apple Human Interface Guidelines, продуктову аналітику та автоматизоване тестування.",
+                    "topics": [
+                        "Introduction",
+                        "macOS Fundamentals",
+                        "macOS Version History",
+                        "Basics of Testing Apps on macOS",
+                        "Process and Memory Management",
+                        "Daemons and Agents",
+                        "Permissions in macOS",
+                        "Sandbox, System Integrity Protocol, Gatekeeper",
+                        "Network Utilities and Diagnostics",
+                        "Testing GUI & UX",
+                        "Product Analytics Testing",
+                        "Introduction to Test Automation for macOS Apps"
+                    ]
+                },
+                {
+                    "title": "Algorithms and Data Structures",
+                    "description": "Алгоритми замовляли? У цьому модулі ми познайомимося з різними структурами даних та алгоритмами. Навчимося обходити дерева краще сина маминої подруги, сортувати масиви зі швидкістю quick sort, створювати hash map та не тільки стояти в черзі, а й реалізовувати її. І це тільки маленька частинка того, що тебе чекає в цьому модулі.",
+                    "topics": [
+                        "Main Concepts",
+                        "Algorithm Complexity",
+                        "Data Structures: Array",
+                        "Search Algorithms",
+                        "Data Structures: Linked List",
+                        "Data Structures: Stack",
+                        "Data Structures: Queue",
+                        "Data Structures: Hash Map",
+                        "Data Structures: Hash Set"
+                    ]
+                },
+                {
+                    "title": "Career Development",
+                    "description": "Цей модуль спрямований на розвиток навичок, необхідних для досягнення успіху в професійній сфері, а саме: стратегії кар'єрного зростання, важливі аспекти особистісного розвитку та інструменти для досягнення професійних цілей.",
+                    "topics": [
+                        "Mastering Your Probation Period",
+                        "PDP and Career Plans",
+                        "Salary Review Strategies",
+                        "Recruiter Outreach",
+                        "How to Find a New Job?"
+                    ]
                 }
             ]
-        }
+        },
+        "num_modules": 19,
+        "num_topics": 148,
+        "full_time_duration": "3 місяці",
+        "part_time_duration": "5 місяців"
     },
     {
         "name": "Python developer",
@@ -334,9 +564,196 @@
                         "Functions",
                         "HAVING Statement"
                     ]
+                },
+                {
+                    "title": "Django ORM",
+                    "description": "У цьому розділі ти познайомишся з однією з найпопулярніших ORM для роботи з базами даних на Python. Ти навчишся створювати таблиці та робити прості та складні SQL-запити за допомогою інтерфейсу Django ORM. А головне — цей модуль підготує тебе до знайомства із Django!",
+                    "topics": [
+                        "Database Intro",
+                        "ORM Intro",
+                        "Fields and Relations",
+                        "Many-to-Many Relationship",
+                        "Queries",
+                        "Queries in Details",
+                        "ORM Advanced",
+                        "Optional: Performance Improvement & Isolation Levels"
+                    ]
+                },
+                {
+                    "title": "HTML + CSS Basics",
+                    "description": "Поверстаємо? В цьому модулі ти ознайомишся з базовими конструкціями мови розмітки HTML та мовою стилів CSS.",
+                    "topics": [
+                        "HTML Basics",
+                        "CSS Basics",
+                        "Colors and Fonts",
+                        "Box Model Basics",
+                        "Semantic Basics",
+                        "Responsiveness Basics",
+                        "CSS Selectors",
+                        "Pseudo-Elements and Pseudo-Classes",
+                        "Specificity",
+                        "Links and URLs",
+                        "Images",
+                        "Media Queries",
+                        "Forms",
+                        "Position",
+                        "Extra Topics"
+                    ]
+                },
+                {
+                    "title": "How the Web Works",
+                    "description": "Кожного дня ти так чи інакше взаємодієш із мережею Інтернет. Але чи замислювався ти над тим, як працює всесвітня павутина? У цьому модулі ми допоможемо тобі розібратися з тим, як взаємодіють та обмінюються даними наші пристрої в мережі та що таке Інтернет в цілому.",
+                    "topics": [
+                        "Introduction to the Web",
+                        "OSI Model",
+                        "HTTP",
+                        "API Interface",
+                        "Encryption",
+                        "Security in the Web"
+                    ]
+                },
+                {
+                    "title": "Django",
+                    "description": "Нарешті ми дійшли до найпопулярнішого вебфреймворку в  Python — Django. MVT, Dependency Injection, Web — тепер будуть у твоєму розпорядженні. Тут ти попрактикуєш HTML та CSS, а також попрацюєш із базами даних та отримаєш навички, які точно знадобляться тобі в майбутніх проєктах.",
+                    "topics": [
+                        "Django Intro",
+                        "MVT",
+                        "Class-Based Generic Views",
+                        "Sessions and Authentication",
+                        "Forms",
+                        "Forms in Details",
+                        "Django Advanced",
+                        "Website [Portfolio Project]",
+                        "Deploying Django",
+                        "Django Practice"
+                    ]
+                },
+                {
+                    "title": "Django REST Framework",
+                    "description": "Якщо ти хочеш розробляти потужні API, то Django REST Framework — 100% твій вибір. У цьому модулі ти попрактикуєшся в написанні API, дізнаєшся, як проходить процес аутентифікації користувачів, та протестуєш власний написаний код. Пориньмо у світ Python Backend!",
+                    "topics": [
+                        "Django REST Framework Intro",
+                        "Class-Based Views",
+                        "Serializers",
+                        "Serializers in Details",
+                        "Authentication & Permissions",
+                        "Django REST Framework Advanced",
+                        "DRF JWT and Tests",
+                        "Docker",
+                        "Docker in DRF",
+                        "API [Portfolio Project]",
+                        "Test Task Solving",
+                        "Connect Backend to Frontend",
+                        "DRF Practice"
+                    ]
+                },
+                {
+                    "title": "Asynchronous Python",
+                    "description": "Набридло все робити крок за кроком, рядок за рядком? Тоді цей модуль саме для тебе! Тут ти навчишся пришвидшувати роботу програми завдяки асинхронності та розберешся із поняттями конкурентності та паралелізму.",
+                    "topics": [
+                        "Concurrency & Parallelism",
+                        "Asyncio"
+                    ]
+                },
+                {
+                    "title": "Employment",
+                    "description": "Відшліфовуємо резюме, рекомендаційний лист та профілі в професійних соціальних мережах. Працюємо з базою вакансій. Проходимо тестові технічні та нетехнічні інтерв’ю. Вчимося комунікувати з рекрутерами. Проходимо справжнє інтерв’ю. Приймаємо оффер. Виходимо на роботу.",
+                    "topics": [
+                        "Introduction",
+                        "Preparing Your Resume",
+                        "Interview Preparation",
+                        "Preparing Your Cover Letter",
+                        "DOU and Google Profiles",
+                        "Creating Your LinkedIn Profile",
+                        "How to Communicate in the Right Way",
+                        "Creating Your Djinni Profile",
+                        "How to Find Vacancies",
+                        "How to Apply for a Job on Different Platforms",
+                        "How to Find Recruiters' Contacts",
+                        "Employment Daily Activities",
+                        "Work Details FAQ"
+                    ]
+                },
+                {
+                    "title": "Object Oriented Programming",
+                    "description": "На технічній співбесіді початківців часто запитують про Об'єктно-орієнтоване програмування (ООП) та його основні принципи.\nУ цьомо модулі ти познайомишся з основами ООП та іншими речами, про які тебе можуть запитати.",
+                    "topics": [
+                        "Basic Principles",
+                        "SOLID Principles"
+                    ]
+                },
+                {
+                    "title": "Python Advanced",
+                    "description": "Ще більше Python! У цьому модулі ми розглянемо складніші приклади: пропарсимо вебсторінку, проаналізуємо дані, навчимось будувати графіки та навіть створимо власну модель для машинного навчання!",
+                    "topics": [
+                        "SOLID Practice",
+                        "FastAPI overview",
+                        "FastAPI in details",
+                        "Web Scraping",
+                        "Selenium",
+                        "Scrapy",
+                        "Data Analysis",
+                        "Pandas & Matplotlib",
+                        "ETL & Visualising Practice",
+                        "[Portfolio Project]: Web Scraping & Data Analysis Practice",
+                        "Tableau",
+                        "Machine Learning",
+                        "Neural Networks & Classification",
+                        "Machine Learning Practice"
+                    ]
+                },
+                {
+                    "title": "Algorithms and Data Structures",
+                    "description": "Алгоритми замовляли? У цьому модулі ми познайомимося з різними структурами даних та алгоритмами. Навчимося обходити дерева краще сина маминої подруги, сортувати масиви зі швидкістю quick sort, створювати hash map та не тільки стояти в черзі, а й реалізовувати її. І це тільки маленька частинка того, що тебе чекає в цьому модулі.",
+                    "topics": [
+                        "Main Concepts",
+                        "Algorithm Complexity",
+                        "Data Structures: Array",
+                        "Search Algorithms",
+                        "Data Structures: Linked List",
+                        "Data Structures: Stack",
+                        "Data Structures: Queue",
+                        "Data Structures: Hash Map",
+                        "Data Structures: Hash Set"
+                    ]
+                },
+                {
+                    "title": "JavaScript Basics",
+                    "description": "Це старт. Тут ти освоїш синтаксис мови JavaScript, ознайомишся зі змінними, циклами, функціями, логічними операторами та іншими базовими конструкціями.",
+                    "topics": [
+                        "Introduction",
+                        "Your First JavaScript Program",
+                        "Main Concepts",
+                        "Numbers",
+                        "Strings",
+                        "Boolean",
+                        "Functions",
+                        "Conditional Operators",
+                        "Arrays",
+                        "Loops",
+                        "String Iteration",
+                        "Strings Methods",
+                        "Working With Arrays",
+                        "Get Ready for the Interview"
+                    ]
+                },
+                {
+                    "title": "Career Development",
+                    "description": "Цей модуль спрямований на розвиток навичок, необхідних для досягнення успіху в професійній сфері, а саме: стратегії кар'єрного зростання, важливі аспекти особистісного розвитку та інструменти для досягнення професійних цілей.",
+                    "topics": [
+                        "Mastering Your Probation Period",
+                        "PDP and Career Plans",
+                        "Salary Review Strategies",
+                        "Recruiter Outreach",
+                        "How to Find a New Job?"
+                    ]
                 }
             ]
-        }
+        },
+        "num_modules": 19,
+        "num_topics": 185,
+        "full_time_duration": "4 місяці",
+        "part_time_duration": "7 місяців"
     },
     {
         "name": "Data analyst",
@@ -409,9 +826,52 @@
                     "title": "Tableau",
                     "description": "Tableau — це ціла екосистема інтерактивної аналітики. У цьому модулі ти навчишся підключати дані та створювати комбіновані джерела даних, робити складні візуалізації, публікувати та оновлювати дешборди. Також ти навчишся використовувати  Tableau Prep для підготовки даних, та Tableau Public і Tableau Online для спільного доступу до своїх робіт.",
                     "topics": []
+                },
+                {
+                    "title": "Statistics",
+                    "description": "Статистика — тема непроста, але ми постаралися зібрати тільки ту інформацію, яка знадобиться тобі для виконання реальних робочих задач дата аналітика. У цьому модулі ти навчишся основам статистики, включаючи її роль у бізнесі та повсякденному житті. Також ти попрацюєш над аналізом взаємозвʼязків між даними, перевіркою гіпотез та навчишся дизайну статистичних експериментів.",
+                    "topics": []
+                },
+                {
+                    "title": "Product A/B Testing",
+                    "description": "Починаємо формувати продуктове мислення. У цьому модулі ти навчишся підходам до оцінки гіпотез, зокрема A/B tests. Ти дізнаєшся, як будувати продуктові гіпотези, розробляти дизайн A/B тестів, обирати метрики для їх проведення та аналізувати результати.",
+                    "topics": []
+                },
+                {
+                    "title": "Employment",
+                    "description": "Відшліфовуємо резюме, рекомендаційний лист та профілі в професійних соціальних мережах. Працюємо з базою вакансій. Проходимо тестові технічні та нетехнічні інтерв’ю. Вчимося комунікувати з рекрутерами. Проходимо справжнє інтерв’ю. Приймаємо оффер. Виходимо на роботу.",
+                    "topics": [
+                        "Introduction",
+                        "Preparing Your Resume",
+                        "Interview Preparation",
+                        "Preparing Your Cover Letter",
+                        "DOU and Google Profiles",
+                        "Creating Your LinkedIn Profile",
+                        "How to Communicate in the Right Way",
+                        "Creating Your Djinni Profile",
+                        "How to Find Vacancies",
+                        "How to Apply for a Job on Different Platforms",
+                        "How to Find Recruiters' Contacts",
+                        "Employment Daily Activities",
+                        "Work Details FAQ"
+                    ]
+                },
+                {
+                    "title": "Product and Marketing Metrics",
+                    "description": "Продовжуємо розвивати продуктове мислення. У цьому модулі ти навчишся оцінювати залучення користувачів, аналізувати активацію та утримання. Ти освоїш типові продуктові фреймворки, такі як когортний аналіз, RFM, NSM, та ARRR. Крім того, ти створиш карту метрик для сайту в якості проєкту.",
+                    "topics": []
+                },
+                {
+                    "title": "Advanced Analytics: Prediction and Clustering Models",
+                    "description": "Занурюємося в аналітику. У цьому модулі ти навчишся прогнозуванню кількісних показників за допомогою лінійної багатофакторної моделі та лінійної регресійної моделі з однією пояснюючою змінною. Ти освоїш поняття тренувальних і тестових даних, крос-валідацію, міри якості моделі, регуляризацію, а також прогнозування якісних показників і ризиків за допомогою логістичної регресії. Крім того, ти дізнаєшся про кластерний аналіз, методи кластеризації даних, міри схожості та алгоритми, такі як k-середніх, k-медіан та DBSCAN.",
+                    "topics": []
                 }
             ]
-        }
+        },
+        "num_modules": 12,
+        "num_topics": 40,
+        "full_time_duration": "3 місяці",
+        "part_time_duration": "5 місяців"
     },
     {
         "name": "Digital marketer",
@@ -503,9 +963,46 @@
                         "Portfolio Project",
                         "Customer Loyalty and Referral Programs"
                     ]
+                },
+                {
+                    "title": "Employment",
+                    "description": "Відшліфовуємо резюме, рекомендаційний лист та профілі в професійних соціальних мережах. Працюємо з базою вакансій. Проходимо тестові технічні та нетехнічні інтерв’ю. Вчимося комунікувати з рекрутерами. Проходимо справжнє інтерв’ю. Приймаємо оффер. Виходимо на роботу.",
+                    "topics": [
+                        "Introduction",
+                        "Preparing Your Resume",
+                        "Interview Preparation",
+                        "Preparing Your Cover Letter",
+                        "DOU and Google Profiles",
+                        "Creating Your LinkedIn Profile",
+                        "How to Communicate in the Right Way",
+                        "Creating Your Djinni Profile",
+                        "How to Find Vacancies",
+                        "How to Apply for a Job on Different Platforms",
+                        "How to Find Recruiters' Contacts",
+                        "Employment Daily Activities",
+                        "Work Details FAQ"
+                    ]
+                },
+                {
+                    "title": "Digital Marketing Analytics",
+                    "description": "У цьому модулі ти дізнаєшся як правильно робити аналіз, щоб оцінювати ефективність digital-маркетингу та коригувати стратегію. Ми розберемось з ключовими інструментами та сервісами для аналітики, познайомимось з Google Analytics та зробимо базові налаштування. Також ми розглянемо інтерфейс основних звітів, та поговоримо про кастомні звіти. Наприкінці модуля ти зрозумієш як обрати та впровадити ключові інструменти та сервіси для аналітики для свого бізнесу, а також зрозумієш, як формувати основні звіти.",
+                    "topics": [
+                        "Social Media Analytics",
+                        "Web Analytics",
+                        "Paid Advertising Analytics",
+                        "Metrics of Effectiveness",
+                        "Reporting and Analysis",
+                        "DM Analytics Overview",
+                        "CRM Analytics",
+                        "Email Marketing Analytics"
+                    ]
                 }
             ]
-        }
+        },
+        "num_modules": 9,
+        "num_topics": 64,
+        "full_time_duration": "3 місяці",
+        "part_time_duration": "4 місяці"
     },
     {
         "name": "Front-end developer",
@@ -622,9 +1119,161 @@
                         "Classes",
                         "Extra"
                     ]
+                },
+                {
+                    "title": "DOM, Events, Promises",
+                    "description": "В цьому модулі ти дізнаєшся як керувати сторінкою за допомогою JavaScript, а також про асинхронність у JavaScript.",
+                    "topics": [
+                        "DOM Basics",
+                        "DOM Styling and Sizing",
+                        "Events",
+                        "Promises",
+                        "Portfolio Project"
+                    ]
+                },
+                {
+                    "title": "React",
+                    "description": "Реактивненько вриваємось у світ фреймворків та UI-бібліотек. Прийшов час познайомитися з однією з найпопулярніших бібліотек у фронтенд-розробці. У цьому модулі ти дізнаєшся, що таке компонентний підхід до розробки, а також розробиш перший інтерактивний інтерфейс та створиш роботу для портфоліо!",
+                    "topics": [
+                        "Introduction",
+                        "Props",
+                        "Rendering Lists",
+                        "Handling Events",
+                        "List Manipulation",
+                        "Lifting State Up",
+                        "Updating State"
+                    ]
+                },
+                {
+                    "title": "TypeScript",
+                    "description": "JavaScript ми вже знаємо. Прийшла черга зробити наш код більш передбачуваним і безпечним, а розробку приємнішою. У цьому модулі ти дізнаєшся, що таке статична типізація й чим корисний TypeScript для розробника.",
+                    "topics": [
+                        "Introduction",
+                        "Basic Types",
+                        "Advanced Types",
+                        "Object Types",
+                        "Classes",
+                        "Generic Types"
+                    ]
+                },
+                {
+                    "title": "React with TypeScript",
+                    "description": "У цьому модулі ти познайомишся з магією TypeScript у React.",
+                    "topics": [
+                        "Introduction",
+                        "Forms",
+                        "Advanced Hooks",
+                        "Component Lifecycle",
+                        "Custom Hooks",
+                        "Loading Data From API",
+                        "Updating Data on Server",
+                        "State Management",
+                        "React Router",
+                        "Working With URLSearchParams",
+                        "Portfolio"
+                    ]
+                },
+                {
+                    "title": "Redux",
+                    "description": "Що там по менеджменту? Розберемось, як використовувати бібліотеку Redux в парі з бібліотекою React для менеджменту загального стану твого додатка. Припинимо прокидатися в холодному поту від слова «ред'юсер». Або почнемо…",
+                    "topics": [
+                        "Main Concepts",
+                        "React Redux",
+                        "Async Redux"
+                    ]
+                },
+                {
+                    "title": "How the Web Works",
+                    "description": "Кожного дня ти так чи інакше взаємодієш із мережею Інтернет. Але чи замислювався ти над тим, як працює всесвітня павутина? У цьому модулі ми допоможемо тобі розібратися з тим, як взаємодіють та обмінюються даними наші пристрої в мережі та що таке Інтернет в цілому.",
+                    "topics": [
+                        "Introduction to the Web",
+                        "OSI Model",
+                        "HTTP",
+                        "API Interface",
+                        "Encryption",
+                        "Security in the Web"
+                    ]
+                },
+                {
+                    "title": "Tech Interview",
+                    "description": "У цьому модулі ми розглянемо важливі теми для проходження технічної співбесіди, які залишилися поза курсом.",
+                    "topics": [
+                        "Final Portfolio Review"
+                    ]
+                },
+                {
+                    "title": "Employment",
+                    "description": "Відшліфовуємо резюме, рекомендаційний лист та профілі в професійних соціальних мережах. Працюємо з базою вакансій. Проходимо тестові технічні та нетехнічні інтерв’ю. Вчимося комунікувати з рекрутерами. Проходимо справжнє інтерв’ю. Приймаємо оффер. Виходимо на роботу.",
+                    "topics": [
+                        "Introduction",
+                        "Preparing Your Resume",
+                        "Interview Preparation",
+                        "Preparing Your Cover Letter",
+                        "DOU and Google Profiles",
+                        "Creating Your LinkedIn Profile",
+                        "How to Communicate in the Right Way",
+                        "Creating Your Djinni Profile",
+                        "How to Find Vacancies",
+                        "How to Apply for a Job on Different Platforms",
+                        "How to Find Recruiters' Contacts",
+                        "Employment Daily Activities",
+                        "Work Details FAQ"
+                    ]
+                },
+                {
+                    "title": "Vue.js",
+                    "description": "У цьому модулі ти створиш додаток ToDo за допомогою фреймворку Vue.js, використовуючи його систему реактивності, компоненти та обробку даних за допомогою Axios. Ти також вивчиш передові методи та розгорнеш свій додаток на GitHub Pages.",
+                    "topics": [
+                        "TodoApp with Vue.js"
+                    ]
+                },
+                {
+                    "title": "Angular",
+                    "description": "Angular — це популярний JS-фреймворк для створення масштабованих односторінкових вебдодатків. У цьому модулі ти вивчиш концепції Angular, від основ і структури проєкту до складних тем, таких як форми, компоненти, спостережувані параметри, управління станом, обробка помилок і оптимізація продуктивності.",
+                    "topics": [
+                        "Angular Basics"
+                    ]
+                },
+                {
+                    "title": "Algorithms and Data Structures",
+                    "description": "Алгоритми замовляли? У цьому модулі ми познайомимося з різними структурами даних та алгоритмами. Навчимося обходити дерева краще сина маминої подруги, сортувати масиви зі швидкістю quick sort, створювати hash map та не тільки стояти в черзі, а й реалізовувати її. І це тільки маленька частинка того, що тебе чекає в цьому модулі.",
+                    "topics": [
+                        "Main Concepts",
+                        "Algorithm Complexity",
+                        "Data Structures: Array",
+                        "Search Algorithms",
+                        "Data Structures: Linked List",
+                        "Data Structures: Stack",
+                        "Data Structures: Queue",
+                        "Data Structures: Hash Map",
+                        "Data Structures: Hash Set"
+                    ]
+                },
+                {
+                    "title": "Object Oriented Programming",
+                    "description": "На технічній співбесіді початківців часто запитують про Об'єктно-орієнтоване програмування (ООП) та його основні принципи.\nУ цьомо модулі ти познайомишся з основами ООП та іншими речами, про які тебе можуть запитати.",
+                    "topics": [
+                        "Basic Principles",
+                        "SOLID Principles"
+                    ]
+                },
+                {
+                    "title": "Career Development",
+                    "description": "Цей модуль спрямований на розвиток навичок, необхідних для досягнення успіху в професійній сфері, а саме: стратегії кар'єрного зростання, важливі аспекти особистісного розвитку та інструменти для досягнення професійних цілей.",
+                    "topics": [
+                        "Mastering Your Probation Period",
+                        "PDP and Career Plans",
+                        "Salary Review Strategies",
+                        "Recruiter Outreach",
+                        "How to Find a New Job?"
+                    ]
                 }
             ]
-        }
+        },
+        "num_modules": 20,
+        "num_topics": 138,
+        "full_time_duration": "5 місяців",
+        "part_time_duration": "7 місяців"
     },
     {
         "name": "Full-stack developer",
@@ -741,9 +1390,235 @@
                         "Classes",
                         "Extra"
                     ]
+                },
+                {
+                    "title": "DOM, Events, Promises",
+                    "description": "В цьому модулі ти дізнаєшся як керувати сторінкою за допомогою JavaScript, а також про асинхронність у JavaScript.",
+                    "topics": [
+                        "DOM Basics",
+                        "DOM Styling and Sizing",
+                        "Events",
+                        "Promises",
+                        "Portfolio Project"
+                    ]
+                },
+                {
+                    "title": "React",
+                    "description": "Реактивненько вриваємось у світ фреймворків та UI-бібліотек. Прийшов час познайомитися з однією з найпопулярніших бібліотек у фронтенд-розробці. У цьому модулі ти дізнаєшся, що таке компонентний підхід до розробки, а також розробиш перший інтерактивний інтерфейс та створиш роботу для портфоліо!",
+                    "topics": [
+                        "Introduction",
+                        "Props",
+                        "Rendering Lists",
+                        "Handling Events",
+                        "List Manipulation",
+                        "Lifting State Up",
+                        "Updating State"
+                    ]
+                },
+                {
+                    "title": "TypeScript",
+                    "description": "JavaScript ми вже знаємо. Прийшла черга зробити наш код більш передбачуваним і безпечним, а розробку приємнішою. У цьому модулі ти дізнаєшся, що таке статична типізація й чим корисний TypeScript для розробника.",
+                    "topics": [
+                        "Introduction",
+                        "Basic Types",
+                        "Advanced Types",
+                        "Object Types",
+                        "Classes",
+                        "Generic Types"
+                    ]
+                },
+                {
+                    "title": "React with TypeScript",
+                    "description": "У цьому модулі ти познайомишся з магією TypeScript у React.",
+                    "topics": [
+                        "Introduction",
+                        "Forms",
+                        "Advanced Hooks",
+                        "Component Lifecycle",
+                        "Custom Hooks",
+                        "Loading Data From API",
+                        "Updating Data on Server",
+                        "State Management",
+                        "React Router",
+                        "Working With URLSearchParams",
+                        "Portfolio"
+                    ]
+                },
+                {
+                    "title": "Redux",
+                    "description": "Що там по менеджменту? Розберемось, як використовувати бібліотеку Redux в парі з бібліотекою React для менеджменту загального стану твого додатка. Припинимо прокидатися в холодному поту від слова «ред'юсер». Або почнемо…",
+                    "topics": [
+                        "Main Concepts",
+                        "React Redux",
+                        "Async Redux"
+                    ]
+                },
+                {
+                    "title": "How the Web Works",
+                    "description": "Кожного дня ти так чи інакше взаємодієш із мережею Інтернет. Але чи замислювався ти над тим, як працює всесвітня павутина? У цьому модулі ми допоможемо тобі розібратися з тим, як взаємодіють та обмінюються даними наші пристрої в мережі та що таке Інтернет в цілому.",
+                    "topics": [
+                        "Introduction to the Web",
+                        "OSI Model",
+                        "HTTP",
+                        "API Interface",
+                        "Encryption",
+                        "Security in the Web"
+                    ]
+                },
+                {
+                    "title": "SQL Basics",
+                    "description": "У рамках даного модуля ти познайомишся з поняттям бази даних, а також дізнаєшся, які існують види баз даних. Ти розглянеш, яким чином зберігається інформація в реляційних базах, та навчишся писати запити SELECT, щоб отримувати потрібну інформацію в бажаному вигляді. Після завершення модуля ти будеш знати, що таке INNER JOIN та для чого він використовується, будеш вміти сортувати та групувати дані за потрібними критеріями, а також застосовувати різні функції конкретної БД. Отож, поїхали!",
+                    "topics": [
+                        "Introduction to SQL",
+                        "SELECT Statement",
+                        "WHERE Statement",
+                        "NULL Value, LIKE, BETWEEN, and IN Statements",
+                        "ORDER BY, LIMIT, DISTINCT",
+                        "Aliases",
+                        "Aggregate Functions",
+                        "GROUP BY Statement",
+                        "JOIN Statement",
+                        "Functions",
+                        "HAVING Statement"
+                    ]
+                },
+                {
+                    "title": "Node.js",
+                    "description": "Ну що, frontend вже підкорений? Тоді саме час почати писати сервери на Javascript! У цьому модулі ти зануришся у світ Node.js і backend-розробки, дізнаєшся як створити API та авторизувати користувача. Також ти будеш працювати з базою даних і WebSocket, писати тести, деплоїти проєкти та багато чого іншого.",
+                    "topics": [
+                        "Introduction",
+                        "Modules",
+                        "Development Environment",
+                        "Working With Command Line",
+                        "Working With Files",
+                        "HTTP Module",
+                        "Event Loop",
+                        "Streams",
+                        "Express",
+                        "Working With Databases",
+                        "Node.js App Deployment",
+                        "Authentication",
+                        "Realtime Applications"
+                    ]
+                },
+                {
+                    "title": "Tech Interview",
+                    "description": "У цьому модулі ми розглянемо важливі теми для проходження технічної співбесіди, які залишилися поза курсом.",
+                    "topics": [
+                        "Final Portfolio Review"
+                    ]
+                },
+                {
+                    "title": "Employment",
+                    "description": "Відшліфовуємо резюме, рекомендаційний лист та профілі в професійних соціальних мережах. Працюємо з базою вакансій. Проходимо тестові технічні та нетехнічні інтерв’ю. Вчимося комунікувати з рекрутерами. Проходимо справжнє інтерв’ю. Приймаємо оффер. Виходимо на роботу.",
+                    "topics": [
+                        "Introduction",
+                        "Preparing Your Resume",
+                        "Interview Preparation",
+                        "Preparing Your Cover Letter",
+                        "DOU and Google Profiles",
+                        "Creating Your LinkedIn Profile",
+                        "How to Communicate in the Right Way",
+                        "Creating Your Djinni Profile",
+                        "How to Find Vacancies",
+                        "How to Apply for a Job on Different Platforms",
+                        "How to Find Recruiters' Contacts",
+                        "Employment Daily Activities",
+                        "Work Details FAQ"
+                    ]
+                },
+                {
+                    "title": "Vue.js",
+                    "description": "У цьому модулі ти створиш додаток ToDo за допомогою фреймворку Vue.js, використовуючи його систему реактивності, компоненти та обробку даних за допомогою Axios. Ти також вивчиш передові методи та розгорнеш свій додаток на GitHub Pages.",
+                    "topics": [
+                        "TodoApp with Vue.js"
+                    ]
+                },
+                {
+                    "title": "Angular",
+                    "description": "Angular — це популярний JS-фреймворк для створення масштабованих односторінкових вебдодатків. У цьому модулі ти вивчиш концепції Angular, від основ і структури проєкту до складних тем, таких як форми, компоненти, спостережувані параметри, управління станом, обробка помилок і оптимізація продуктивності.",
+                    "topics": [
+                        "Angular Basics"
+                    ]
+                },
+                {
+                    "title": "Algorithms and Data Structures",
+                    "description": "Алгоритми замовляли? У цьому модулі ми познайомимося з різними структурами даних та алгоритмами. Навчимося обходити дерева краще сина маминої подруги, сортувати масиви зі швидкістю quick sort, створювати hash map та не тільки стояти в черзі, а й реалізовувати її. І це тільки маленька частинка того, що тебе чекає в цьому модулі.",
+                    "topics": [
+                        "Main Concepts",
+                        "Algorithm Complexity",
+                        "Data Structures: Array",
+                        "Search Algorithms",
+                        "Data Structures: Linked List",
+                        "Data Structures: Stack",
+                        "Data Structures: Queue",
+                        "Data Structures: Hash Map",
+                        "Data Structures: Hash Set"
+                    ]
+                },
+                {
+                    "title": "Object Oriented Programming",
+                    "description": "На технічній співбесіді початківців часто запитують про Об'єктно-орієнтоване програмування (ООП) та його основні принципи.\nУ цьомо модулі ти познайомишся з основами ООП та іншими речами, про які тебе можуть запитати.",
+                    "topics": [
+                        "Basic Principles",
+                        "SOLID Principles"
+                    ]
+                },
+                {
+                    "title": "JavaScript Testing",
+                    "description": "Тестування — це важливо! Але чим більше коду, тим більше треба перевіряти кожного разу. Автоматизація дозволить значно спростити цей процес.",
+                    "topics": [
+                        "Introduction to Javascript Automated Testing",
+                        "Unit Testing",
+                        "TDD Basics",
+                        "Mock Basics",
+                        "Advanced Mocks",
+                        "Cypress"
+                    ]
+                },
+                {
+                    "title": "Career Development",
+                    "description": "Цей модуль спрямований на розвиток навичок, необхідних для досягнення успіху в професійній сфері, а саме: стратегії кар'єрного зростання, важливі аспекти особистісного розвитку та інструменти для досягнення професійних цілей.",
+                    "topics": [
+                        "Mastering Your Probation Period",
+                        "PDP and Career Plans",
+                        "Salary Review Strategies",
+                        "Recruiter Outreach",
+                        "How to Find a New Job?"
+                    ]
+                },
+                {
+                    "title": "DevOps Basics",
+                    "description": "У цьому модулі ти розглянеш як організована розробка програмного забезпечення та як її можна оптимізувати. А найголовніше — яка роль DevOps-інженера в усьому цьому.",
+                    "topics": [
+                        "Introduction",
+                        "DevOps Culture and Practices",
+                        "DevOps as a Role",
+                        "SDLC and Development Methodologies",
+                        "Summary"
+                    ]
+                },
+                {
+                    "title": "Docker Core",
+                    "description": "Саме час познайомитись із технологією контейнеризації та Docker — де-факто стандартом для розповсюдження та запуску вебзастосунків. Тож, уперед!",
+                    "topics": [
+                        "Docker Setup",
+                        "Docker Introduction",
+                        "Docker Internals",
+                        "Docker Basics",
+                        "Containerizing an App",
+                        "Managing Containers",
+                        "Docker Volumes",
+                        "Docker Compose",
+                        "12-Factor App"
+                    ]
                 }
             ]
-        }
+        },
+        "num_modules": 25,
+        "num_topics": 182,
+        "full_time_duration": "5 місяців",
+        "part_time_duration": "8 місяців"
     },
     {
         "name": "DevOps engineer",
@@ -852,9 +1727,223 @@
                         "Shell Scripting",
                         "Web Server"
                     ]
+                },
+                {
+                    "title": "SQL Basics",
+                    "description": "У рамках даного модуля ти познайомишся з поняттям бази даних, а також дізнаєшся, які існують види баз даних. Ти розглянеш, яким чином зберігається інформація в реляційних базах, та навчишся писати запити SELECT, щоб отримувати потрібну інформацію в бажаному вигляді. Після завершення модуля ти будеш знати, що таке INNER JOIN та для чого він використовується, будеш вміти сортувати та групувати дані за потрібними критеріями, а також застосовувати різні функції конкретної БД. Отож, поїхали!",
+                    "topics": [
+                        "Introduction to SQL",
+                        "SELECT Statement",
+                        "WHERE Statement",
+                        "NULL Value, LIKE, BETWEEN, and IN Statements",
+                        "ORDER BY, LIMIT, DISTINCT",
+                        "Aliases",
+                        "Aggregate Functions",
+                        "GROUP BY Statement",
+                        "JOIN Statement",
+                        "Functions",
+                        "HAVING Statement"
+                    ]
+                },
+                {
+                    "title": "Python Core for DevOps",
+                    "description": "Ось і настав час заглибитись у світ Python Core і прокачатися як розробник. У цьому модулі ти використаєш знання на практиці, а генератори, ітератори та декоратори перестануть тебе лякати.",
+                    "topics": [
+                        "How to Solve GitHub Tasks",
+                        "Mutable Immutable Types",
+                        "List and Dict Comprehensions",
+                        "Functions in Details",
+                        "Decorators",
+                        "Classes",
+                        "Сlasses in Details",
+                        "Iterators and Generators",
+                        "Modules and Imports",
+                        "Exception Handling",
+                        "Exceptions in Details",
+                        "File Handling",
+                        "Testing",
+                        "Testing in Details",
+                        "FastAPI Overview",
+                        "FastAPI in Details"
+                    ]
+                },
+                {
+                    "title": "Docker Core",
+                    "description": "Саме час познайомитись із технологією контейнеризації та Docker — де-факто стандартом для розповсюдження та запуску вебзастосунків. Тож, уперед!",
+                    "topics": [
+                        "Docker Setup",
+                        "Docker Introduction",
+                        "Docker Internals",
+                        "Docker Basics",
+                        "Containerizing an App",
+                        "Managing Containers",
+                        "Docker Volumes",
+                        "Docker Compose",
+                        "12-Factor App"
+                    ]
+                },
+                {
+                    "title": "Relational Database Administration",
+                    "description": "Тепер, коли ти вмієш користуватись базами даних, саме час дізнатись як керувати власним сервером для них. А найголовніше — як робити бекап бази даних!",
+                    "topics": [
+                        "Database Intro",
+                        "Database Design Fundamentals",
+                        "Database Design Advanced",
+                        "Database Internals",
+                        "Configuring the Database",
+                        "Running Database Migrations",
+                        "Monitoring Database Server",
+                        "Backup and Restoration",
+                        "Replication"
+                    ]
+                },
+                {
+                    "title": "Kubernetes Basics",
+                    "description": "Запустити один контейнер доволі просто. Але що робити, якщо їх сотні? У цьому модулі ти освоїш платформу Kubernetes, яка допоможе розв'язати цю проблему.",
+                    "topics": [
+                        "Module Overview",
+                        "Kubernetes Introduction",
+                        "Kubernetes Architecture",
+                        "Lab SetUp",
+                        "Working With Pods",
+                        "Working With Services",
+                        "Controllers and Deployments",
+                        "DeamonSets and Jobs",
+                        "Configuration Management",
+                        "Storage and StatefulSets",
+                        "Cluster Networking: Ingress",
+                        "Scheduling in Details",
+                        "Helm  Architecture",
+                        "RBAC and Service Accounts",
+                        "Helm Practice"
+                    ]
+                },
+                {
+                    "title": "Monitoring and Observability",
+                    "description": "Чи задоволені користувачі твого веб сервісу? Єдиний спосіб на це відповісти - мати правильно сконфігурований моніторинг, і цей модуль допоможе тобі розібратись, як саме це зробити.",
+                    "topics": [
+                        "Module Overview",
+                        "Monitoring and Observability",
+                        "Monitoring Tools Overview",
+                        "Prometheus-Like Monitoring (Instrumenting App)",
+                        "Alerting",
+                        "Grafana Dashboards",
+                        "Monitoring Kubernetes",
+                        "Monitoring Techniques"
+                    ]
+                },
+                {
+                    "title": "Cloud Computing Basics",
+                    "description": "Хмарні технології дозволяють запускати код у будь-якій частині світу та розширювати інфраструктуру з одного серверу до сотні всього в кілька кліків. Настав час розглянути ці можливості.",
+                    "topics": [
+                        "Module Overview",
+                        "Environment Setup",
+                        "Main Concepts",
+                        "Azure Overview",
+                        "Azure Virtual Machine Basics",
+                        "Azure PowerShell",
+                        "Azure Virtual Machine Advanced",
+                        "Automating Resource Deployment With Azure Resource Manager (ARM) Templates",
+                        "Managing Users and Groups in Microsoft Entra ID",
+                        "Managing Access to Azure Resources"
+                    ]
+                },
+                {
+                    "title": "DevOps Practices: CI/CD",
+                    "description": "CI/CD — це серце циклу розробки програмного забезпечення. Тут ти навчишся будувати цей процес розробки та автоматизовувати його за допомогою GitHub Actions.",
+                    "topics": [
+                        "Module Overview",
+                        "Introduction to CI/CD and GitHub Actions",
+                        "GitHub Actions: CI for Python app",
+                        "GitHub Actions: CI for Docker",
+                        "GitHub Actions: CI for Helm",
+                        "GitHub Actions CD: Azure Kubernetes Services",
+                        "Polishing Workflow"
+                    ]
+                },
+                {
+                    "title": "Infrastructure as a Code With Terraform",
+                    "description": "Що означає «Infrastructure as a Code», які переваги має цей підхід та як створити хмарну інфраструктуру за допомогою Terraform? Усе це ми розглянемо в цьому модулі.",
+                    "topics": [
+                        "Terraform State",
+                        "HCL Language Features",
+                        "Terraform Provisioners",
+                        "Working with Terraform",
+                        "Getting Started with Terraform",
+                        "Introduction to Infrastructure as Code",
+                        "Portfolio Project",
+                        "Module Overview",
+                        "Terraform Modules"
+                    ]
+                },
+                {
+                    "title": "Employment",
+                    "description": "Відшліфовуємо резюме, рекомендаційний лист та профілі в професійних соціальних мережах. Працюємо з базою вакансій. Проходимо тестові технічні та нетехнічні інтерв’ю. Вчимося комунікувати з рекрутерами. Проходимо справжнє інтерв’ю. Приймаємо оффер. Виходимо на роботу.",
+                    "topics": [
+                        "Introduction",
+                        "Preparing Your Resume",
+                        "Interview Preparation",
+                        "Preparing Your Cover Letter",
+                        "DOU and Google Profiles",
+                        "Creating Your LinkedIn Profile",
+                        "How to Communicate in the Right Way",
+                        "Creating Your Djinni Profile",
+                        "How to Find Vacancies",
+                        "How to Apply for a Job on Different Platforms",
+                        "How to Find Recruiters' Contacts",
+                        "Employment Daily Activities",
+                        "Work Details FAQ"
+                    ]
+                },
+                {
+                    "title": "Cloud Computing Extended",
+                    "description": "Azure — одна з найпопулярніших хмарних платформ. Тож розглянемо її та навчимось працювати з базовими сервісами.",
+                    "topics": [
+                        "Module Overview",
+                        "Azure Virtual Networks Overview",
+                        "Configure Secure Access to Virtual Networks",
+                        "Configure Name Resolution in Virtual Networks",
+                        "Configure Load Balancing",
+                        "Web Apps"
+                    ]
+                },
+                {
+                    "title": "Other DevOps Practices",
+                    "description": "Цей модуль ознайомить тебе з додатковими практиками та підходами DevOps, які дозволять ще ефективніше будувати процеси для розробки програмного забезпечення.",
+                    "topics": [
+                        "Incident Comand System",
+                        "Immutable infrastructure",
+                        "Chaos engineering",
+                        "Deployment strategies",
+                        "Dependency injection",
+                        "Blameless postmortems",
+                        "Status pages",
+                        "Developers on call",
+                        "SRE practices",
+                        "DevOps antipatterns",
+                        "Chatops"
+                    ]
+                },
+                {
+                    "title": "Architecture Patterns & Reference Architectures",
+                    "description": "Архітектура — це спосіб організації компонентів системи або програми. Розробники підходять до цього по-різному, але декілька таких підходів вирізняються популярністю. У цьому модулі ми їх і розглянемо.",
+                    "topics": [
+                        "Replication",
+                        "Queue",
+                        "HA & DR",
+                        "Microservices",
+                        "SOLID",
+                        "Service discovery",
+                        "Clustering",
+                        "Monolith"
+                    ]
                 }
             ]
-        }
+        },
+        "num_modules": 20,
+        "num_topics": 192,
+        "full_time_duration": "3 місяці",
+        "part_time_duration": "4 місяці"
     },
     {
         "name": "Java developer",
@@ -981,9 +2070,155 @@
                         "Hibernate Cache Levels",
                         "Performance Improvement"
                     ]
+                },
+                {
+                    "title": "How the Web Works",
+                    "description": "Кожного дня ти так чи інакше взаємодієш із мережею Інтернет. Але чи замислювався ти над тим, як працює всесвітня павутина? У цьому модулі ми допоможемо тобі розібратися з тим, як взаємодіють та обмінюються даними наші пристрої в мережі та що таке Інтернет в цілому.",
+                    "topics": [
+                        "Introduction to the Web",
+                        "OSI Model",
+                        "HTTP",
+                        "API Interface",
+                        "Encryption",
+                        "Security in the Web"
+                    ]
+                },
+                {
+                    "title": "Spring Boot",
+                    "description": "Spring Boot — це як Spring, але зовсім іншого рівня! Більше не потрібно вручну налаштовувати вебсервер, підключення до бази даних або залежності для проєкту. Spring Boot попіклується про це, щоб ти сконцентрувався на більш важливих речах — створенні логіки додатка. Протягом цього модуля ти дізнаєшся, як користуватися Spring Boot, як він працює «під капотом» та які «плюшки» пропонує.",
+                    "topics": [
+                        "Spring Boot Intro",
+                        "Spring Bean Lifecycle",
+                        "Spring Boot Web",
+                        "Spring Boot Web: DTO",
+                        "Spring Boot Web: Mappers in Details",
+                        "Spring Data JPA",
+                        "Criteria Query in Spring Boot",
+                        "Spring Transactional",
+                        "GlobalExceptionHandler and Data Validation",
+                        "Pagination, Sorting, Swagger",
+                        "Working With Third-Party API",
+                        "Security Basics",
+                        "Spring Boot Security",
+                        "JWT",
+                        "Spring Boot Practice",
+                        "Docker in Spring Boot",
+                        "Spring Boot Testing",
+                        "Deploy the Project to AWS",
+                        "Spring Boot AOP",
+                        "Portfolio Project"
+                    ]
+                },
+                {
+                    "title": "Java Multithreading",
+                    "description": "Багатопоточність допомагає швидше та ефективніше працювати з великою кількістю даних, а також більш ефективно використовувати ресурс процесора. Щоб навчитися працювати з таким часто непередбачуваним інструментом, потрібна уважність до деталей, та воно того варте! У цьому модулі ти розглянеш основний синтаксис для роботи в багатопоточному режимі, а також розповсюджені класи та інтерфейси для вирішення основних завдань.",
+                    "topics": [
+                        "Multithreading intro",
+                        "Threads",
+                        "JMM (Java Memory Model)",
+                        "Thread manipulation",
+                        "Locks",
+                        "Deadlock",
+                        "ExecutorService and Future",
+                        "CompletableFuture",
+                        "Concurrent collections"
+                    ]
+                },
+                {
+                    "title": "Employment",
+                    "description": "Відшліфовуємо резюме, рекомендаційний лист та профілі в професійних соціальних мережах. Працюємо з базою вакансій. Проходимо тестові технічні та нетехнічні інтерв’ю. Вчимося комунікувати з рекрутерами. Проходимо справжнє інтерв’ю. Приймаємо оффер. Виходимо на роботу.",
+                    "topics": [
+                        "Introduction",
+                        "Preparing Your Resume",
+                        "Interview Preparation",
+                        "Preparing Your Cover Letter",
+                        "DOU and Google Profiles",
+                        "Creating Your LinkedIn Profile",
+                        "How to Communicate in the Right Way",
+                        "Creating Your Djinni Profile",
+                        "How to Find Vacancies",
+                        "How to Apply for a Job on Different Platforms",
+                        "How to Find Recruiters' Contacts",
+                        "Employment Daily Activities",
+                        "Work Details FAQ"
+                    ]
+                },
+                {
+                    "title": "Kotlin",
+                    "description": "Пориньте у захоплюючий світ розробки додатків для Android за допомогою нашого модуля Kotlin! Вивчіть основи цієї інноваційної мови та зробіть свій перший крок до створення передових програм для Android.",
+                    "topics": [
+                        "Kotlin Intro",
+                        "Variables, Data Types, and Operators",
+                        "Nullability",
+                        "Functions",
+                        "Collections, Conditionals, and Loops",
+                        "Classes (OOP)",
+                        "Classes (Advanced)",
+                        "Extensions",
+                        "Exceptions and Files",
+                        "Standard Functions and Other Concepts"
+                    ]
+                },
+                {
+                    "title": "Algorithms and Data Structures",
+                    "description": "Алгоритми замовляли? У цьому модулі ми познайомимося з різними структурами даних та алгоритмами. Навчимося обходити дерева краще сина маминої подруги, сортувати масиви зі швидкістю quick sort, створювати hash map та не тільки стояти в черзі, а й реалізовувати її. І це тільки маленька частинка того, що тебе чекає в цьому модулі.",
+                    "topics": [
+                        "Main Concepts",
+                        "Algorithm Complexity",
+                        "Data Structures: Array",
+                        "Search Algorithms",
+                        "Data Structures: Linked List",
+                        "Data Structures: Stack",
+                        "Data Structures: Queue",
+                        "Data Structures: Hash Map",
+                        "Data Structures: Hash Set"
+                    ]
+                },
+                {
+                    "title": "HTML + CSS Basics",
+                    "description": "Поверстаємо? В цьому модулі ти ознайомишся з базовими конструкціями мови розмітки HTML та мовою стилів CSS.",
+                    "topics": [
+                        "HTML Basics",
+                        "CSS Basics",
+                        "Colors and Fonts",
+                        "Box Model Basics",
+                        "Semantic Basics",
+                        "Responsiveness Basics",
+                        "CSS Selectors",
+                        "Pseudo-Elements and Pseudo-Classes",
+                        "Specificity",
+                        "Links and URLs",
+                        "Images",
+                        "Media Queries",
+                        "Forms",
+                        "Position",
+                        "Extra Topics"
+                    ]
+                },
+                {
+                    "title": "Angular",
+                    "description": "Angular — це популярний JS-фреймворк для створення масштабованих односторінкових вебдодатків. У цьому модулі ти вивчиш концепції Angular, від основ і структури проєкту до складних тем, таких як форми, компоненти, спостережувані параметри, управління станом, обробка помилок і оптимізація продуктивності.",
+                    "topics": [
+                        "Angular Basics"
+                    ]
+                },
+                {
+                    "title": "Career Development",
+                    "description": "Цей модуль спрямований на розвиток навичок, необхідних для досягнення успіху в професійній сфері, а саме: стратегії кар'єрного зростання, важливі аспекти особистісного розвитку та інструменти для досягнення професійних цілей.",
+                    "topics": [
+                        "Mastering Your Probation Period",
+                        "PDP and Career Plans",
+                        "Salary Review Strategies",
+                        "Recruiter Outreach",
+                        "How to Find a New Job?"
+                    ]
                 }
             ]
-        }
+        },
+        "num_modules": 16,
+        "num_topics": 166,
+        "full_time_duration": "3 місяці",
+        "part_time_duration": "8 місяців"
     },
     {
         "name": "Recruiter",
@@ -1072,8 +2307,23 @@
                         "Encryption",
                         "Security in the Web"
                     ]
+                },
+                {
+                    "title": "Career Development",
+                    "description": "Цей модуль спрямований на розвиток навичок, необхідних для досягнення успіху в професійній сфері, а саме: стратегії кар'єрного зростання, важливі аспекти особистісного розвитку та інструменти для досягнення професійних цілей.",
+                    "topics": [
+                        "Mastering Your Probation Period",
+                        "PDP and Career Plans",
+                        "Salary Review Strategies",
+                        "Recruiter Outreach",
+                        "How to Find a New Job?"
+                    ]
                 }
             ]
-        }
+        },
+        "num_modules": 8,
+        "num_topics": 45,
+        "full_time_duration": "3 місяці",
+        "part_time_duration": "4 місяці"
     }
 ]
