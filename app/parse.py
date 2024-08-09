@@ -102,7 +102,12 @@ def get_course_detail(url: str) -> CourseDetailDTO:
     for item in module_items:
         title = item.find("h4").text.strip()
         description = item.find("p", class_=re.compile(r"CourseModuleItem_description__.*")).text.strip()
-        topics = [topic.text.strip() for topic in item.find_all("p", class_="typography_landingTextMain__Rc8BD")]
+        topics_section = item.find("div", class_="CourseModuleItem_topicsList__Dmm8g")
+        if topics_section:
+            topics = [topic.text.strip() for topic in
+                      topics_section.find_all("p", class_="typography_landingTextMain__Rc8BD")]
+        else:
+            topics = []
 
         modules.append(CourseModuleDTO(title=title, description=description, topics=topics))
 
