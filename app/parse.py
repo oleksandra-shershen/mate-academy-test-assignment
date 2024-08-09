@@ -105,15 +105,29 @@ def fetch_full_page(url: str, timeout: int = 10) -> str:
     return page_content
 
 
-def get_course_detail(url: str) -> (CourseDetailDTO, int, int):
+def get_course_detail(url: str) -> (CourseDetailDTO, int, int, str):
     content = fetch_full_page(url)
     soup = BeautifulSoup(content, "html.parser")
 
+    # Extract the number of modules and topics
     modules_heading = soup.find("div", class_="CourseModulesHeading_headingGrid__ynoxV")
     num_modules = int(
         modules_heading.find("div", class_="CourseModulesHeading_modulesNumber__UrnUh").text.strip().split()[0])
     num_topics = int(
         modules_heading.find("div", class_="CourseModulesHeading_topicsNumber__5IA8Z").text.strip().split()[0])
+
+    comparison_table = soup.find("div", class_="ComparisonTable_tableBody__Hg0Vc")
+    duration_rows = comparison_table.find_all("div", class_="ComparisonTable_row__P2dAA")
+
+    full_time_duration = ""
+
+    for row in duration_rows:
+        title = row.find("div", class_="ComparisonTable_cell__8DNfm ComparisonTable_rowTitle__hwc7p").text.strip()
+        value = row.find_all("div", class_="ComparisonTable_cell__8DNfm")[1].text.strip()
+
+        if title == "Тривалість":
+            full_time_duration = value
+            break
 
     modules = []
     module_items = soup.find_all("div", class_=re.compile(r"CourseModuleItem_grid__.*"))
@@ -130,7 +144,7 @@ def get_course_detail(url: str) -> (CourseDetailDTO, int, int):
 
         modules.append(CourseModuleDTO(title=title, description=description, topics=topics))
 
-    return CourseDetailDTO(modules=modules), num_modules, num_topics
+    return CourseDetailDTO(modules=modules), num_modules, num_topics, full_time_duration
 
 
 def get_all_courses(url: str) -> list[CourseLinkDTO]:
@@ -189,6 +203,7 @@ def write_to_excel(courses_data: list[dict], file_name: str) -> None:
             "Description": course["description"],
             "Number of Modules": course["num_modules"],
             "Number of Topics": course["num_topics"],
+            "Full-Time Duration": course["full_time_duration"],
         }
         for course in courses_data
     ]
@@ -261,10 +276,11 @@ def main(base_url: str) -> None:
                 "link": course.link,
                 "description": course.description,
             }
-            details, num_modules, num_topics = get_course_detail(course.link)
+            details, num_modules, num_topics, full_time_duration = get_course_detail(course.link)
             course_dict["details"] = asdict(details)
             course_dict["num_modules"] = num_modules
             course_dict["num_topics"] = num_topics
+            course_dict["full_time_duration"] = full_time_duration
             courses_data.append(course_dict)
     except HTTPResponseError as e:
         logging.error(f"Failed to fetch courses: {e}")
