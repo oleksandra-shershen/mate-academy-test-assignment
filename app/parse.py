@@ -105,46 +105,78 @@ def fetch_full_page(url: str, timeout: int = 10) -> str:
     return page_content
 
 
-def get_course_detail(url: str) -> (CourseDetailDTO, int, int, str):
+def get_course_detail(url: str) -> (CourseDetailDTO, int, int, str, str):
     content = fetch_full_page(url)
     soup = BeautifulSoup(content, "html.parser")
 
     # Extract the number of modules and topics
     modules_heading = soup.find("div", class_="CourseModulesHeading_headingGrid__ynoxV")
+
+    if modules_heading is None:
+        logging.error("Modules heading not found.")
+        raise ValueError("Modules heading not found.")
+
     num_modules = int(
         modules_heading.find("div", class_="CourseModulesHeading_modulesNumber__UrnUh").text.strip().split()[0])
     num_topics = int(
         modules_heading.find("div", class_="CourseModulesHeading_topicsNumber__5IA8Z").text.strip().split()[0])
 
-    comparison_table = soup.find("div", class_="ComparisonTable_tableBody__Hg0Vc")
-    duration_rows = comparison_table.find_all("div", class_="ComparisonTable_row__P2dAA")
-
+    # Extract durations for full-time and part-time courses
     full_time_duration = ""
+    part_time_duration = ""
 
-    for row in duration_rows:
-        title = row.find("div", class_="ComparisonTable_cell__8DNfm ComparisonTable_rowTitle__hwc7p").text.strip()
-        value = row.find_all("div", class_="ComparisonTable_cell__8DNfm")[1].text.strip()
+    comparison_tables = soup.find_all("div", class_="ComparisonTable_wrapper__D21nr")
 
-        if title == "Тривалість":
-            full_time_duration = value
-            break
+    if not comparison_tables:
+        logging.error("No comparison tables found.")
+        raise ValueError("No comparison tables found.")
+
+    for table in comparison_tables:
+        header = table.find("div", class_="ComparisonTable_row__P2dAA")
+
+        if header is None:
+            continue
+
+        header_text = header.text.strip()
+
+        if "Навчання повного дня" in header_text:
+            rows = table.find_all("div", class_="ComparisonTable_row__P2dAA")
+            for row in rows:
+                title = row.find("div", class_="ComparisonTable_cell__8DNfm ComparisonTable_rowTitle__hwc7p")
+                if title and title.text.strip() == "Тривалість":
+                    value = row.find_all("div", class_="ComparisonTable_cell__8DNfm")[1]
+                    if value:
+                        full_time_duration = value.text.strip()
+        elif "З гнучким графіком" in header_text:
+            rows = table.find_all("div", class_="ComparisonTable_row__P2dAA")
+            for row in rows:
+                title = row.find("div", class_="ComparisonTable_cell__8DNfm ComparisonTable_rowTitle__hwc7p")
+                if title and title.text.strip() == "Тривалість":
+                    value = row.find_all("div", class_="ComparisonTable_cell__8DNfm")[1]
+                    if value:
+                        part_time_duration = value.text.strip()
 
     modules = []
     module_items = soup.find_all("div", class_=re.compile(r"CourseModuleItem_grid__.*"))
 
     for item in module_items:
-        title = item.find("h4").text.strip()
-        description = item.find("p", class_=re.compile(r"CourseModuleItem_description__.*")).text.strip()
+        title = item.find("h4")
+        if not title:
+            continue
+
+        description = item.find("p", class_=re.compile(r"CourseModuleItem_description__.*"))
+        if not description:
+            continue
+
         topics_section = item.find("div", class_="CourseModuleItem_topicsList__Dmm8g")
+        topics = []
         if topics_section:
             topics = [topic.text.strip() for topic in
                       topics_section.find_all("p", class_="typography_landingTextMain__Rc8BD")]
-        else:
-            topics = []
 
-        modules.append(CourseModuleDTO(title=title, description=description, topics=topics))
+        modules.append(CourseModuleDTO(title=title.text.strip(), description=description.text.strip(), topics=topics))
 
-    return CourseDetailDTO(modules=modules), num_modules, num_topics, full_time_duration
+    return CourseDetailDTO(modules=modules), num_modules, num_topics, full_time_duration, part_time_duration
 
 
 def get_all_courses(url: str) -> list[CourseLinkDTO]:
@@ -204,6 +236,7 @@ def write_to_excel(courses_data: list[dict], file_name: str) -> None:
             "Number of Modules": course["num_modules"],
             "Number of Topics": course["num_topics"],
             "Full-Time Duration": course["full_time_duration"],
+            "Part-Time Duration": course["part_time_duration"],
         }
         for course in courses_data
     ]
@@ -276,11 +309,12 @@ def main(base_url: str) -> None:
                 "link": course.link,
                 "description": course.description,
             }
-            details, num_modules, num_topics, full_time_duration = get_course_detail(course.link)
+            details, num_modules, num_topics, full_time_duration, part_time_duration = get_course_detail(course.link)
             course_dict["details"] = asdict(details)
             course_dict["num_modules"] = num_modules
             course_dict["num_topics"] = num_topics
             course_dict["full_time_duration"] = full_time_duration
+            course_dict["part_time_duration"] = part_time_duration
             courses_data.append(course_dict)
     except HTTPResponseError as e:
         logging.error(f"Failed to fetch courses: {e}")
