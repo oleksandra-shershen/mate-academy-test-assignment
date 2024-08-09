@@ -5,16 +5,19 @@ import re
 import time
 from dataclasses import dataclass, asdict
 from functools import wraps
-from typing import Callable, Any
+from typing import Callable, Any, List
+from urllib.parse import urljoin
 
 import pandas as pd
-import requests
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 from openpyxl import load_workbook
 from openpyxl.styles import Alignment
 from openpyxl.worksheet.hyperlink import Hyperlink
-
-from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 
 BASE_URL = "https://mate.academy/"
 APP_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -40,12 +43,12 @@ class CourseLinkDTO:
 class CourseModuleDTO:
     title: str
     description: str
-    topics: list[str]
+    topics: List[str]
 
 
 @dataclass(frozen=True)
 class CourseDetailDTO:
-    modules: list[CourseModuleDTO]
+    modules: List[CourseModuleDTO]
 
 
 def configure_logging() -> None:
@@ -69,31 +72,41 @@ def configure_logging() -> None:
 
 def log_time(func: Callable) -> Callable:
     @wraps(func)
-    def wrapper(*args: Any, **kwargs: Any) -> Any:
+    def wrapper(url: str, *args: Any, **kwargs: Any) -> Any:
         start_time = time.time()
-        result = func(*args, **kwargs)
+        result = func(url, *args, **kwargs)
         elapsed_time = time.time() - start_time
-        logging.info(
-            f"Time taken by {func.__name__}: {elapsed_time:.2f} seconds"
-        )
+        logging.info(f"Time taken by {func.__name__} for {url}: {elapsed_time:.2f} seconds")
         return result
 
     return wrapper
 
 
 @log_time
-def get_page_content(url: str, timeout: int = 10) -> str:
+def fetch_full_page(url: str, timeout: int = 10) -> str:
+    driver = webdriver.Chrome()
+    driver.get(url)
+
     try:
-        response = requests.get(url, timeout=timeout)
-        response.raise_for_status()
-        return response.text
-    except requests.exceptions.RequestException as error:
-        logging.error(f"Error fetching {url}: {error}")
-        raise HTTPResponseError(url, response.status_code) from error
+        while True:
+            show_more_button = WebDriverWait(driver, timeout).until(
+                EC.presence_of_element_located((
+                    By.CSS_SELECTOR,
+                    ".CourseModulesBlock_showMoreButton__N0f0_"
+                ))
+            )
+            driver.execute_script("arguments[0].click();", show_more_button)
+            time.sleep(2)
+    except:
+        pass
+
+    page_content = driver.page_source
+    driver.quit()
+    return page_content
 
 
 def get_course_detail(url: str) -> CourseDetailDTO:
-    content = get_page_content(url)
+    content = fetch_full_page(url)
     soup = BeautifulSoup(content, "html.parser")
 
     modules = []
@@ -115,7 +128,7 @@ def get_course_detail(url: str) -> CourseDetailDTO:
 
 
 def get_all_courses(url: str) -> list[CourseLinkDTO]:
-    content = get_page_content(url)
+    content = fetch_full_page(url)
     soup = BeautifulSoup(content, "html.parser")
     courses = []
 
