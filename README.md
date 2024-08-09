@@ -103,6 +103,7 @@ Additionally, extract the following details for each course:
 ## Solution for Task 2:
 The web scraper is implemented in the file app/parse.py. This script extracts the list of courses from the landing page of the mate.academy website. All collected data is saved in an Excel file for easy access and analysis.
 
+********************************************************************************************************************************************************************************************************************
 # Project Overview
 ## Features
 * Web Scraping: Uses Selenium and BeautifulSoup to extract course details from the Mate Academy website.
