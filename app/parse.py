@@ -105,9 +105,15 @@ def fetch_full_page(url: str, timeout: int = 10) -> str:
     return page_content
 
 
-def get_course_detail(url: str) -> CourseDetailDTO:
+def get_course_detail(url: str) -> (CourseDetailDTO, int, int):
     content = fetch_full_page(url)
     soup = BeautifulSoup(content, "html.parser")
+
+    modules_heading = soup.find("div", class_="CourseModulesHeading_headingGrid__ynoxV")
+    num_modules = int(
+        modules_heading.find("div", class_="CourseModulesHeading_modulesNumber__UrnUh").text.strip().split()[0])
+    num_topics = int(
+        modules_heading.find("div", class_="CourseModulesHeading_topicsNumber__5IA8Z").text.strip().split()[0])
 
     modules = []
     module_items = soup.find_all("div", class_=re.compile(r"CourseModuleItem_grid__.*"))
@@ -124,7 +130,7 @@ def get_course_detail(url: str) -> CourseDetailDTO:
 
         modules.append(CourseModuleDTO(title=title, description=description, topics=topics))
 
-    return CourseDetailDTO(modules=modules)
+    return CourseDetailDTO(modules=modules), num_modules, num_topics
 
 
 def get_all_courses(url: str) -> list[CourseLinkDTO]:
@@ -181,6 +187,8 @@ def write_to_excel(courses_data: list[dict], file_name: str) -> None:
             "Name": course["name"],
             "Link": course["link"],
             "Description": course["description"],
+            "Number of Modules": course["num_modules"],
+            "Number of Topics": course["num_topics"],
         }
         for course in courses_data
     ]
@@ -253,8 +261,10 @@ def main(base_url: str) -> None:
                 "link": course.link,
                 "description": course.description,
             }
-            details = get_course_detail(course.link)
+            details, num_modules, num_topics = get_course_detail(course.link)
             course_dict["details"] = asdict(details)
+            course_dict["num_modules"] = num_modules
+            course_dict["num_topics"] = num_topics
             courses_data.append(course_dict)
     except HTTPResponseError as e:
         logging.error(f"Failed to fetch courses: {e}")
