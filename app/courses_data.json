@@ -166,7 +166,7 @@
         "num_modules": 11,
         "num_topics": 90,
         "full_time_duration": "4 місяці",
-        "part_time_duration": "8 місяців"
+        "flex_time_duration": "8 місяців"
     },
     {
         "name": "QA engineer",
@@ -441,7 +441,7 @@
         "num_modules": 19,
         "num_topics": 148,
         "full_time_duration": "3 місяці",
-        "part_time_duration": "5 місяців"
+        "flex_time_duration": "5 місяців"
     },
     {
         "name": "Python developer",
@@ -753,7 +753,7 @@
         "num_modules": 19,
         "num_topics": 185,
         "full_time_duration": "4 місяці",
-        "part_time_duration": "7 місяців"
+        "flex_time_duration": "7 місяців"
     },
     {
         "name": "Data analyst",
@@ -871,7 +871,7 @@
         "num_modules": 12,
         "num_topics": 40,
         "full_time_duration": "3 місяці",
-        "part_time_duration": "5 місяців"
+        "flex_time_duration": "5 місяців"
     },
     {
         "name": "Digital marketer",
@@ -1002,7 +1002,7 @@
         "num_modules": 9,
         "num_topics": 64,
         "full_time_duration": "3 місяці",
-        "part_time_duration": "4 місяці"
+        "flex_time_duration": "4 місяці"
     },
     {
         "name": "Front-end developer",
@@ -1273,7 +1273,7 @@
         "num_modules": 20,
         "num_topics": 138,
         "full_time_duration": "5 місяців",
-        "part_time_duration": "7 місяців"
+        "flex_time_duration": "7 місяців"
     },
     {
         "name": "Full-stack developer",
@@ -1618,7 +1618,7 @@
         "num_modules": 25,
         "num_topics": 182,
         "full_time_duration": "5 місяців",
-        "part_time_duration": "8 місяців"
+        "flex_time_duration": "8 місяців"
     },
     {
         "name": "DevOps engineer",
@@ -1943,7 +1943,7 @@
         "num_modules": 20,
         "num_topics": 192,
         "full_time_duration": "3 місяці",
-        "part_time_duration": "4 місяці"
+        "flex_time_duration": "4 місяці"
     },
     {
         "name": "Java developer",
@@ -2218,7 +2218,7 @@
         "num_modules": 16,
         "num_topics": 166,
         "full_time_duration": "3 місяці",
-        "part_time_duration": "8 місяців"
+        "flex_time_duration": "8 місяців"
     },
     {
         "name": "Recruiter",
@@ -2324,6 +2324,6 @@
         "num_modules": 8,
         "num_topics": 45,
         "full_time_duration": "3 місяці",
-        "part_time_duration": "4 місяці"
+        "flex_time_duration": "4 місяці"
     }
 ]
