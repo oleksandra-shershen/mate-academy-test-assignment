@@ -103,3 +103,39 @@ Additionally, extract the following details for each course:
 ## Solution for Task 2:
 The web scraper is implemented in the file app/parse.py. This script extracts the list of courses from the landing page of the mate.academy website. All collected data is saved in an Excel file for easy access and analysis.
 
+********************************************************************************************************************************************************************************************************************
+# Project Overview
+## Features
+* Web Scraping: Uses Selenium and BeautifulSoup to extract course details from the Mate Academy website.
+* Data Extraction: Gathers information about course modules, topics, and durations for both full-time and flexible schedules.
+* Logging: Configurable logging for tracking the progress and debugging.
+* JSON Export: Saves the extracted course data into a JSON file.
+* Excel Export: Organizes and saves the course data into an Excel file with well-structured sheets.
+
+## Requirements
+To run this project, you need to have the following Python libraries installed:
+
+* selenium
+* beautifulsoup4
+* pandas
+* openpyxl
+
+You can install the required libraries using pip:
+```python
+pip install -r requirements.txt
+```
+
+## Usage
+To run the scraper, simply execute the main function. This will fetch the course details from Mate Academy, save them in JSON and Excel formats, and log the progress.
+```python
+python app/parse.py
+```
+The output files will be:
+* `courses_data.json`: JSON file containing the course details.
+* `courses_data.xlsx`: Excel file with the course data organized into sheets.
+
+## Logging
+The project logs all activities to an `app.log` file, including any errors encountered during the scraping process. This log is helpful for debugging and understanding the flow of execution.
+
+## Contributing
+Contributions are welcome! If you have any suggestions or improvements, feel free to submit a pull request or open an issue.
