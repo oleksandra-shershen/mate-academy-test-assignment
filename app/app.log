@@ -1,0 +1,15 @@
+2024-08-11 19:58:25,771 - INFO - Time taken by fetch_full_page for https://mate.academy/: 28.81 seconds
+2024-08-11 19:58:54,583 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/ui-ux?source=profession_card: 28.72 seconds
+2024-08-11 19:59:23,142 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/qa?source=profession_card: 28.40 seconds
+2024-08-11 19:59:51,358 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/python?source=profession_card: 28.04 seconds
+2024-08-11 20:00:23,583 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/data-analytics?source=profession_card: 32.05 seconds
+2024-08-11 20:00:50,893 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/digital-marketing?source=profession_card: 27.18 seconds
+2024-08-11 20:01:19,784 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/frontend?source=profession_card: 28.76 seconds
+2024-08-11 20:01:47,845 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/fullstack?source=profession_card: 27.91 seconds
+2024-08-11 20:02:16,965 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/devops?source=profession_card: 28.78 seconds
+2024-08-11 20:02:45,082 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/java?source=profession_card: 27.87 seconds
+2024-08-11 20:03:13,293 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/recruitment?source=profession_card: 28.06 seconds
+2024-08-11 20:03:13,442 - INFO - Write to file: D:\projects\mate-academy-test-assignment\app\courses_data.json
+2024-08-11 20:03:13,620 - INFO - Write to Excel file: D:\projects\mate-academy-test-assignment\app\courses_data.xlsx
+2024-08-11 20:03:13,621 - INFO - Courses data saved to D:\projects\mate-academy-test-assignment\app\courses_data.json and D:\projects\mate-academy-test-assignment\app\courses_data.xlsx
+2024-08-11 20:03:13,621 - INFO - Time taken by main for https://mate.academy/: 316.66 seconds
