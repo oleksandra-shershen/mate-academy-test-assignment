@@ -1,7 +1,7 @@
 import pytest
 from app.parse import get_all_courses, CourseLink, BASE_URL
 
-FOR_SURE_THIS_COURSES = [
+EXPECTED_COURSES = [
     "UI/UX Designer",
     "QA Engineer",
     "Python developer",
@@ -21,7 +21,7 @@ def test_get_all_courses(all_courses):
     course_names = [course_link.name for course_link in all_courses]
     print(f"Retrieved courses: {course_names}")
 
-    for course in FOR_SURE_THIS_COURSES:
+    for course in EXPECTED_COURSES:
         assert any(
             course.lower() in course_link.name.lower() for course_link in all_courses
         ), f"Course '{course}' was not found"
