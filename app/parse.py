@@ -239,8 +239,14 @@ def extract_modules(soup: BeautifulSoup) -> List[CourseModule]:
 
 
 def extract_module_title_and_description(item: BeautifulSoup) -> (str, str):
-    title_container = item.find("div", class_=re.compile(r"CourseModuleItem_titleContainer__.*"))
-    title = title_container.find("h4", class_=re.compile(r"typography_landingH5__.*")) if title_container else None
+    title_container = item.find(
+        "div",
+        class_=re.compile(r"CourseModuleItem_titleContainer__.*")
+    )
+    title = title_container.find(
+        "h4",
+        class_=re.compile(r"typography_landingH5__.*")
+    ) if title_container else None
     description = item.find(
         "p",
         class_=re.compile(r"CourseModuleItem_description__.*")
@@ -288,12 +294,18 @@ def get_all_courses(url: str) -> list[CourseLink]:
 
 def extract_course_from_card(card: BeautifulSoup) -> CourseLink | None:
     name_tag = card.find("a", class_=re.compile(r"ProfessionCard_title__.*"))
-    description_tag = card.find("p", class_=re.compile(r"ProfessionCard_subtitle__.*"))
+    description_tag = card.find(
+        "p",
+        class_=re.compile(r"ProfessionCard_subtitle__.*")
+    )
 
     if name_tag and description_tag:
         name = name_tag.find("h3").text.strip()
         link = urljoin(BASE_URL, name_tag.get("href"))
-        description = card.find("p", class_=re.compile(r"typography_landingTextMain__.* mb-32")).text.strip()
+        description = card.find(
+            "p",
+            class_=re.compile(r"typography_landingTextMain__.* mb-32")
+        ).text.strip()
         return CourseLink(name=name, link=link, description=description)
 
     logging.warning(f"Missing course name or description in card: {card}")
