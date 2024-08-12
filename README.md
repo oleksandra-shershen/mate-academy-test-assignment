@@ -106,7 +106,7 @@ The web scraper is implemented in the file app/parse.py. This script extracts th
 ********************************************************************************************************************************************************************************************************************
 # Project Overview
 ## Features
-* Web Scraping: Uses Selenium and BeautifulSoup to extract course details from the Mate Academy website.
+* Web Scraping: Uses Selenium and BeautifulSoup to extract course details from the Mate academy website.
 * Data Extraction: Gathers information about course modules, topics, and durations for both full-time and flexible schedules.
 * Logging: Configurable logging for tracking the progress and debugging.
 * JSON Export: Saves the extracted course data into a JSON file.
