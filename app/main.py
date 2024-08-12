@@ -1,9 +1,11 @@
 import logging
 from dataclasses import asdict
 
+from exceptions import HTTPResponseError
+from processing import write_to_json, write_to_excel
 from config import JSON_RESULT_FILE, EXCEL_RESULT_FILE, BASE_URL
 from logger import log_time, configure_logging
-from parse import get_all_courses, get_course_detail, HTTPResponseError, write_to_json, write_to_excel
+from parsing import get_all_courses, get_course_detail
 
 
 @log_time
