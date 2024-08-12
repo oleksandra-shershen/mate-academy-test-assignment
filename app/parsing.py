@@ -111,7 +111,10 @@ def extract_durations(soup: BeautifulSoup) -> (str, str):
         raise ValueError("No comparison tables found.")
 
     for table in comparison_tables:
-        cells = table.find_all("div", class_=re.compile(r"ComparisonTable_cell__.*"))
+        cells = table.find_all(
+            "div",
+            class_=re.compile(r"ComparisonTable_cell__.*")
+        )
 
         for cell in cells:
             if cell.find("img", alt="Calendar"):
