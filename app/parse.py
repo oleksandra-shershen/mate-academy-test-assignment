@@ -96,7 +96,11 @@ def fetch_full_page(url: str, timeout: int = 10) -> str:
     driver.get(url)
 
     while click_show_more_button(driver, timeout):
-        time.sleep(2)
+        WebDriverWait(driver, timeout).until_not(
+            EC.element_to_be_clickable(
+                (By.CSS_SELECTOR, ".CourseModulesBlock_showMoreButton__N0f0_")
+            )
+        )
 
     page_content = driver.page_source
     driver.quit()
