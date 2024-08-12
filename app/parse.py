@@ -286,20 +286,14 @@ def get_all_courses(url: str) -> list[CourseLink]:
     return courses
 
 
-def extract_course_from_card(card: BeautifulSoup) -> CourseLink:
-    name_tag = card.find(
-        "a",
-        class_="typography_landingH3__vTjok ProfessionCard_title__Zq5ZY mb-12"
-    )
-    description_tag = card.find(
-        "p",
-        class_="typography_landingTextMain__Rc8BD mb-32"
-    )
+def extract_course_from_card(card: BeautifulSoup) -> CourseLink | None:
+    name_tag = card.find("a", class_=re.compile(r"ProfessionCard_title__.*"))
+    description_tag = card.find("p", class_=re.compile(r"ProfessionCard_subtitle__.*"))
 
     if name_tag and description_tag:
         name = name_tag.find("h3").text.strip()
         link = urljoin(BASE_URL, name_tag.get("href"))
-        description = description_tag.text.strip()
+        description = card.find("p", class_=re.compile(r"typography_landingTextMain__.* mb-32")).text.strip()
         return CourseLink(name=name, link=link, description=description)
 
     logging.warning(f"Missing course name or description in card: {card}")
