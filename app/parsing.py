@@ -10,9 +10,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 
-from models import CourseDetail, CourseModule, CourseLink
-from config import BASE_URL
-from logger import log_time
+from app.models import CourseDetail, CourseModule, CourseLink
+from app.config import BASE_URL
+from app.logger import log_time
 
 
 @log_time
