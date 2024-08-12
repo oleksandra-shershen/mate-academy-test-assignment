@@ -1,0 +1,30 @@
+2024-08-12 16:47:49,457 - INFO - Time taken by fetch_full_page for https://mate.academy/: 28.30 seconds
+2024-08-12 16:48:15,862 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/ui-ux?source=profession_card: 26.32 seconds
+2024-08-12 16:48:42,042 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/qa?source=profession_card: 26.02 seconds
+2024-08-12 16:49:09,297 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/python?source=profession_card: 27.06 seconds
+2024-08-12 16:49:38,031 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/data-analytics?source=profession_card: 28.50 seconds
+2024-08-12 16:50:05,837 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/digital-marketing?source=profession_card: 27.62 seconds
+2024-08-12 16:50:35,206 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/frontend?source=profession_card: 29.15 seconds
+2024-08-12 16:51:02,796 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/fullstack?source=profession_card: 27.38 seconds
+2024-08-12 16:51:35,248 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/devops?source=profession_card: 32.16 seconds
+2024-08-12 16:52:06,069 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/java?source=profession_card: 30.44 seconds
+2024-08-12 16:52:37,880 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/recruitment?source=profession_card: 31.47 seconds
+2024-08-12 16:52:38,181 - INFO - Write to file: D:\projects\mate-academy-test-assignment\app\extracted_data\courses_data.json
+2024-08-12 16:52:38,490 - INFO - Write to Excel file: D:\projects\mate-academy-test-assignment\app\extracted_data\courses_data.xlsx
+2024-08-12 16:52:38,490 - INFO - Courses data saved to D:\projects\mate-academy-test-assignment\app\extracted_data\courses_data.json and D:\projects\mate-academy-test-assignment\app\extracted_data\courses_data.xlsx
+2024-08-12 16:52:38,490 - INFO - Time taken by main for https://mate.academy/: 317.34 seconds
+2024-08-12 16:56:24,794 - INFO - Time taken by fetch_full_page for https://mate.academy/: 28.62 seconds
+2024-08-12 16:56:54,294 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/ui-ux?source=profession_card: 29.29 seconds
+2024-08-12 16:57:25,310 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/qa?source=profession_card: 30.69 seconds
+2024-08-12 16:57:55,177 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/python?source=profession_card: 29.47 seconds
+2024-08-12 16:58:25,119 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/data-analytics?source=profession_card: 29.56 seconds
+2024-08-12 16:58:54,420 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/digital-marketing?source=profession_card: 28.96 seconds
+2024-08-12 16:59:25,304 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/frontend?source=profession_card: 30.57 seconds
+2024-08-12 16:59:56,493 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/fullstack?source=profession_card: 30.80 seconds
+2024-08-12 17:00:27,467 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/devops?source=profession_card: 30.50 seconds
+2024-08-12 17:00:58,177 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/java?source=profession_card: 30.33 seconds
+2024-08-12 17:01:27,629 - INFO - Time taken by fetch_full_page for https://mate.academy/courses/recruitment?source=profession_card: 29.05 seconds
+2024-08-12 17:01:27,974 - INFO - Write to file: D:\projects\mate-academy-test-assignment\extracted_data\courses_data.json
+2024-08-12 17:01:28,314 - INFO - Write to Excel file: D:\projects\mate-academy-test-assignment\extracted_data\courses_data.xlsx
+2024-08-12 17:01:28,315 - INFO - Courses data saved to D:\projects\mate-academy-test-assignment\extracted_data\courses_data.json and D:\projects\mate-academy-test-assignment\extracted_data\courses_data.xlsx
+2024-08-12 17:01:28,315 - INFO - Time taken by main for https://mate.academy/: 332.14 seconds
