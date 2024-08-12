@@ -1,5 +1,8 @@
 import pytest
-from app.parsing import get_all_courses, CourseLink, BASE_URL
+
+from app.parsing import get_all_courses
+from app.models import CourseLink
+from app.config import BASE_URL
 
 EXPECTED_COURSES = [
     "UI/UX Designer",
