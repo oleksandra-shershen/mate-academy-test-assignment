@@ -138,9 +138,7 @@ def get_course_detail(url: str) -> (CourseDetail, int, int, str, str):
     )
 
 
-def extract_modules_and_topics(
-        soup: BeautifulSoup
-) -> (int, int):
+def extract_modules_and_topics(soup: BeautifulSoup) -> (int, int):
     modules_heading = soup.find(
         "div",
         class_="CourseModulesHeading_headingGrid__ynoxV"
