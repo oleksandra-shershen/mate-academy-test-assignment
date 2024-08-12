@@ -174,7 +174,7 @@ def extract_durations(soup: BeautifulSoup) -> (str, str):
 
     comparison_tables = soup.find_all(
         "div",
-        class_="ComparisonTable_wrapper__D21nr"
+        class_=re.compile(r"ComparisonTable_wrapper__.*")
     )
 
     if not comparison_tables:
@@ -182,12 +182,13 @@ def extract_durations(soup: BeautifulSoup) -> (str, str):
         raise ValueError("No comparison tables found.")
 
     for table in comparison_tables:
-        header_text = extract_table_header(table)
+        cells = table.find_all("div", class_=re.compile(r"ComparisonTable_cell__.*"))
 
-        if "Навчання повного дня" in header_text:
-            full_time_duration = extract_duration_from_table(table)
-        elif "З гнучким графіком" in header_text:
-            flex_time_duration = extract_duration_from_table(table)
+        for cell in cells:
+            if cell.find("img", alt="Calendar"):
+                full_time_duration = extract_duration_from_table(table)
+            elif cell.find("img", alt="One o'clock"):
+                flex_time_duration = extract_duration_from_table(table)
 
     return full_time_duration, flex_time_duration
 
