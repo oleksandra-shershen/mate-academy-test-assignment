@@ -239,7 +239,8 @@ def extract_modules(soup: BeautifulSoup) -> List[CourseModule]:
 
 
 def extract_module_title_and_description(item: BeautifulSoup) -> (str, str):
-    title = item.find("h4")
+    title_container = item.find("div", class_=re.compile(r"CourseModuleItem_titleContainer__.*"))
+    title = title_container.find("h4", class_=re.compile(r"typography_landingH5__.*")) if title_container else None
     description = item.find(
         "p",
         class_=re.compile(r"CourseModuleItem_description__.*")
